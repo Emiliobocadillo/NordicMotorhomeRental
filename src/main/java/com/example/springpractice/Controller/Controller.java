@@ -1,4 +1,4 @@
-package com.example.springpractice;
+package com.example.springpractice.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
