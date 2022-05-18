@@ -1,22 +1,24 @@
 package com.example.springpractice.employee;
 
 import com.example.springpractice.Person;
-import lombok.*;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
+import com.example.springpractice.user.User;
+import lombok.*;
+import org.hibernate.engine.internal.Cascade;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Employee extends Person {
 
-    private String username;
-    private String password;
     private String jobTitle;
-    private String credentials;
+    private boolean admin;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId", referencedColumnName = "id")
+    private User user;
 
 }

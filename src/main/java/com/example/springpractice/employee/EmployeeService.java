@@ -9,10 +9,11 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
+    /*
     @Autowired
     private EmployeeRepository employeeRepo;
 
-    public List<Employee> fetchAll() {
+    public List<Employee> getEmployees() {
         return employeeRepo.fetchAll();
     }
 
@@ -31,5 +32,7 @@ public class EmployeeService {
     public Employee updateEmployee(int id, Employee emp) {
         return employeeRepo.updateEmployee(id, emp);
     }
+
+     */
 
 }

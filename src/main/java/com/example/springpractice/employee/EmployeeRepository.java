@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public class EmployeeRepository {
 
+    /*
     @Autowired
     private JdbcTemplate template;
 
@@ -46,5 +47,7 @@ public class EmployeeRepository {
         template.update(sql, emp.getFullName(), emp.getDateOfBirth(), emp.getAddress(), emp.getCity(), emp.getPhoneNr(), emp.getUsername(), emp.getJobTitle(), emp.getCredentials());
         return null;
     }
+
+     */
 
 }

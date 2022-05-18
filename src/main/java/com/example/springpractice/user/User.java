@@ -1,15 +1,27 @@
 package com.example.springpractice.user;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class User {
     @Id
+    private int id;
+    //change so it gets name from employee
     private String name;
+    @Column(unique = true)
     private String username;
     private  String password;
 
+    /*
     //Constructor
     public User(){}
 
@@ -41,4 +53,6 @@ public class User {
     public String getPassword() {
         return password;
     }
+    to be deleted if lombok works like expected
+     */
 }
