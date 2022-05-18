@@ -1,4 +1,4 @@
-package com.example.springpractice.Service;
+/*package com.example.springpractice.Service;
 
 import models.Client;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,3 +36,4 @@ public class ClientService {
     }
 }
 
+*/

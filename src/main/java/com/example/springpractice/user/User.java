@@ -1,4 +1,4 @@
-package com.example.springpractice.Model;
+package com.example.springpractice.user;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

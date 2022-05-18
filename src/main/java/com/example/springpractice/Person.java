@@ -1,8 +1,6 @@
-package com.example.springpractice.Model;
+package com.example.springpractice;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Formula;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,6 +12,8 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
 @MappedSuperclass
 public class Person {

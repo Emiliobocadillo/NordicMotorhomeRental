@@ -1,39 +1,38 @@
-package com.example.springpractice.Controller;
+package com.example.springpractice.employee;
 
-import models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import services.EmployeeService;
 
 import java.util.List;
 
 @Controller
 public class EmployeeController {
 
+    /*
+    //dependency injection to use UserService class
     @Autowired
     private EmployeeService employeeService;
 
     //get the mapping for index page
-    @GetMapping("/employee")
+    @GetMapping("/")
     //create a list of users @fetchAll() - add them to the model
     public String index(Model model) {
-        List<Employee> employeeList = employeeService.fetchAll();
-        model.addAttribute("employees", employeeList);
-        return "/employee";
+        List<Employee> userList = employeeService.fetchAll();
+        model.addAttribute("users", userList);
+        return "home/index";
     }
 
     //get the mapping for addUser page
-    @GetMapping("/addUser")
+    @GetMapping("/employee")
     public String add() {
-        return "home/addUser";
+        return "home/employee";
     }
 
-    //from addUser page - posts the new employee into the model(table)
+    //from addUser page - posts the new user into the model(table)
     //redirects to index page
     @PostMapping("/addUser")
     public String addUser(@ModelAttribute Employee employee) {
@@ -41,18 +40,19 @@ public class EmployeeController {
         return "redirect:/";
     }
 
+
     //get the mapping for viewUser page
     //returns user via id
-    @GetMapping("/viewUser")
-    public String viewUser(@PathVariable() int id, Model model) {
-        model.addAttribute("user", employeeService.findEmployeeById(id));
+    @GetMapping("/viewUser/{id}")
+    public String viewUser(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.findUserById(id));
         return "home/viewUser";
     }
 
     //deletes user via id
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable("id") int id) {
-        boolean deleted = employeeService.deleteEmployee(id);
+        boolean deleted = userService.deleteUser(id);
         return "redirect:/";
     }
 
@@ -60,17 +60,18 @@ public class EmployeeController {
     //returns user via id
     @GetMapping("/editUser/{id}")
     public String editUser(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", employeeService.findEmployeeById(id));
+        model.addAttribute("user", userService.findUserById(id));
         return "home/editUser";
     }
 
-    //from editUser page - posts the edited employee into the model(table)
+    //from editUser page - posts the edited user into the model(table)
     //redirects to index page
     @PostMapping("/edit")
-    public String edit(@ModelAttribute Employee employee) {
-        employeeService.updateEmployee(employee.getId(), employee);
+    public String edit(@ModelAttribute User user) {
+        userService.updateUser(user.getUsrID(), user);
         return "redirect:/";
     }
 
+     */
 
 }

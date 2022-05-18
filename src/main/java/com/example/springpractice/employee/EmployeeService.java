@@ -1,9 +1,8 @@
-package com.example.springpractice.Service;
+package com.example.springpractice.employee;
 
-import models.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repositorys.EmployeeRepository;
+
 
 import java.util.List;
 

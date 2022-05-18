@@ -1,7 +1,5 @@
-package com.example.springpractice.Service;
+package com.example.springpractice.user;
 
-import com.example.springpractice.Model.User;
-import com.example.springpractice.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,5 +1,6 @@
-package com.example.springpractice.Model;
+package com.example.springpractice.employee;
 
+import com.example.springpractice.Person;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 
-public class Employee extends models.Person {
+public class Employee extends Person {
 
     private String username;
     private String password;

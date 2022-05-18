@@ -1,5 +1,6 @@
-package com.example.springpractice.Model;
+package com.example.springpractice.invoice;
 
+import com.example.springpractice.client.Client;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;

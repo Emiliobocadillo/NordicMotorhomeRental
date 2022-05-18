@@ -1,6 +1,5 @@
-package com.example.springpractice.Repository;
+package com.example.springpractice.user;
 
-import com.example.springpractice.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

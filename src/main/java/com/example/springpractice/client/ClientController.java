@@ -1,6 +1,8 @@
-package com.example.springpractice.Controller;
+/*package com.example.springpractice.Controller;
 
-import models.Client;
+import com.example.springpractice.client.Client;
+import com.example.springpractice.Service.ClientService;
+import model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,3 +51,4 @@ public class ClientController {
     }
 
 }
+*/
