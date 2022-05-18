@@ -13,12 +13,27 @@ import javax.persistence.*;
 @NoArgsConstructor
 
 public class User {
+
     @Id
+    @SequenceGenerator(
+            name = "person_sequence",
+            sequenceName = "person_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "person_sequence"
+    )
+    @Column(updatable = false)
     private int id;
     //change so it gets name from employee
     private String name;
-    @Column(unique = true)
+
+    @Column(unique = true,
+    nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private  String password;
 
     /*

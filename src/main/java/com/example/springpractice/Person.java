@@ -1,6 +1,7 @@
 package com.example.springpractice;
 
 import lombok.*;
+import org.hibernate.boot.model.relational.Sequence;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -14,6 +15,17 @@ import java.util.Date;
 public class Person {
 
     @Id
+    @SequenceGenerator(
+            name = "person_sequence",
+            sequenceName = "person_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "person_sequence"
+    )
+    @Column(name = "id",
+    updatable = false)
     private int id;
     private String firstName;
     private String lastName;
@@ -21,9 +33,10 @@ public class Person {
     private String email;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
-    private String city;
     private String address;
+    private String city;
     private String phoneNr;
+
 
     /*
     //Getters

@@ -11,7 +11,6 @@ import java.util.List;
 @Repository
 public class EmployeeRepository {
 
-    /*
     @Autowired
     private JdbcTemplate template;
 
@@ -20,7 +19,7 @@ public class EmployeeRepository {
         RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
         return template.query(sql, rowMapper);
     }
-
+    /*
     public Employee addEmployee(Employee emp) {
         String sql = "insert into employees (firstname, lastname, dateOfBirth, address, city, phoneNr, username, jobTitle, credentials) Values (?,?,?)";
         template.update(sql, emp.getFullName(),emp.getDateOfBirth(),emp.getAddress(),emp.getCity(), emp.getPhoneNr(), emp.getUsername(), emp.getJobTitle(), emp.getCredentials());

@@ -9,14 +9,14 @@ import java.util.List;
 @Service
 public class EmployeeService {
 
-    /*
-    @Autowired
-    private EmployeeRepository employeeRepo;
 
-    public List<Employee> getEmployees() {
+    @Autowired
+    EmployeeRepository employeeRepo;
+
+    public List<Employee> getEmployees(Employee employee) {
         return employeeRepo.fetchAll();
     }
-
+    /*
     public Employee addEmployee(Employee emp) {
         return employeeRepo.addEmployee(emp);
     }

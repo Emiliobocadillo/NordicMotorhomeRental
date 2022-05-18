@@ -12,11 +12,11 @@ import org.hibernate.engine.internal.Cascade;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Employee extends Person {
 
     private String jobTitle;
     private boolean admin;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", referencedColumnName = "id")
     private User user;

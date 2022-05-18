@@ -19,4 +19,9 @@ public class Controller {
     String login(){
         return "login";
     }
+
+    @PostMapping("/booking")
+    String admin(){
+        return "admin";
+    }
 }
