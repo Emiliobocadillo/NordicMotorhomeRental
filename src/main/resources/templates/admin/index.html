@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+</head>
+<body>
+<header id="home">
+    <!--navbar-->
+    <nav class="navbar">
+        <div class="nav-center">
+            <!--nav header-->
+            <div class="nav-header">
+                <p id="NMR"><span id="nordic">Nordic <br></span> <span id="motorhome">Motorhome <br></span> <span id="rental">Rental</span></p>
+                <button type="button" class="nav-toggle" id="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <!--end of nav header-->
+
+            <!--nav links-->
+            <ul class="nav-links" id="nav-links">
+                <!--single link-->
+                <a href="admin/manageEmployee" class="nav-link" target="_blank">     manage employees     </a>
+                </li>
+                    <a href="admin/manageMotorhomes" class="nav-link" target="_blank">manage motorhomes     </a>
+                </li>
+                <li>
+                    <a href="/makeReservation" class="nav-link" target="_blank">make reservation     </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <!--HERO SECTION-->
+    <div class="hero">
+        <div class="hero-banner">
+            <h1>Welcome (insert name)</h1>
+        </div>
+    </div>
+</header>
+
+
+<div th:fragment="sidebar">
+    <div class="panel panel-default">
+        <div class="panel-heading">Panel 1</div>
+        <div class="panel-body">
+            <div style="padding-bottom: 5px;">Panel 1 Content</div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Panel 2</div>
+        <div class="panel-body">
+            <div style="padding-bottom: 5px;">Panel 2 Content</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

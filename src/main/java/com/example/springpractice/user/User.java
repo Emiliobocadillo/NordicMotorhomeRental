@@ -15,15 +15,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @SequenceGenerator(
-            name = "person_sequence",
-            sequenceName = "person_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "person_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(updatable = false)
     private int id;
     //change so it gets name from employee

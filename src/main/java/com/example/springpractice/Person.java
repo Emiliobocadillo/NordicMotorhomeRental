@@ -15,15 +15,7 @@ import java.util.Date;
 public class Person {
 
     @Id
-    @SequenceGenerator(
-            name = "person_sequence",
-            sequenceName = "person_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "person_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id",
     updatable = false)
     private int id;
@@ -31,7 +23,7 @@ public class Person {
     private String lastName;
     @Column(unique = true)
     private String email;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
     private String address;
     private String city;

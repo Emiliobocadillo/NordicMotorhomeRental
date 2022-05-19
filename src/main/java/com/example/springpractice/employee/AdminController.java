@@ -11,17 +11,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AdminController {
 
-    @Autowired
-    EmployeeService employeeService;
-    @GetMapping("/booking")
-    String registration(){
-        return "admin";
+    @GetMapping("/admin")
+    String admin(){
+        return "admin/index";
     }
 
-    @PostMapping("/adminPage")
-    public String getEmployee(@ModelAttribute Employee employee){
-        employeeService.getEmployees(employee);
-        return "/admin";
+    @GetMapping("admin/manageEmployee")
+    String manageEmployee(){
+        return "admin/manageEmployee";
+    }
 
+    @GetMapping("admin/manageMotorhomes")
+    String manageMotorhomes(){
+        return "admin/manageMotorhomes";
     }
 }

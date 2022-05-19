@@ -11,11 +11,12 @@ public class EmployeeService {
 
 
     @Autowired
-    EmployeeRepository employeeRepo;
+    private ManageEmployeeRepository employeeRepo;
 
-    public List<Employee> getEmployees(Employee employee) {
-        return employeeRepo.fetchAll();
+    public List<Employee> getAll(){
+        return employeeRepo.findAll();
     }
+
     /*
     public Employee addEmployee(Employee emp) {
         return employeeRepo.addEmployee(emp);

@@ -20,8 +20,20 @@ public class Controller {
         return "login";
     }
 
-    @PostMapping("/booking")
+    @PostMapping("/admin")
     String admin(){
         return "admin";
     }
+
+    @PostMapping("admin/manageEmployee")
+    String manageEmployee(){
+        return "admin/manageEmployee";
+    }
+
+    @PostMapping("admin/manageMotorhomes")
+    String manageMotorhomes() {
+        return "admin/manageMotorhomes";
+    }
+
+
 }
