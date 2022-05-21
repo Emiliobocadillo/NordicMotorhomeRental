@@ -6,8 +6,6 @@ import javax.persistence.*;
 import com.example.springpractice.user.User;
 import lombok.*;
 
-import java.util.Date;
-
 @Entity
 @Data
 public class Employee extends Person {

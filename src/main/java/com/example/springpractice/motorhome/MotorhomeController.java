@@ -1,11 +1,11 @@
 package com.example.springpractice.motorhome;
 
-import com.example.springpractice.employee.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -34,4 +34,18 @@ public class MotorhomeController {
         motorhomeService.saveMotorhome(motorhome);
         return "redirect:viewMotorhomePage";
     }
+
+    @GetMapping("/showMotorhomeUpdateForm/{id}")
+    public String showMotorhomeUpdateForm(@PathVariable(value = "id") int id, Model model) {
+        Motorhome motorhome = motorhomeService.getMotorhomeById(id);
+        model.addAttribute("motorhome",motorhome);
+        return "admin/motorhome/updateMotorhome";
+    }
+
+    @GetMapping("/deleteMotorhome/{id}")
+    public String deleteMotorhome(@PathVariable(value = "id")int id) {
+        this.motorhomeService.deleteMotorhomeById(id);
+        return "redirect:/viewMotorhomePage";
+    }
+
 }

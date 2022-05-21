@@ -1,9 +1,5 @@
 package com.example.springpractice.employee;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +14,6 @@ public class EmployeeService {
     //dependency injection to use UserRepo class
     @Autowired
     private EmployeeRepo employeeRepo;
-
-    /*
-    public List<Employee> fetchAllEmployees() {
-        return employeeRepo.fetchAllEmployees();
-    }
-
-     */
 
 
     public List<Employee> getAllEmployees() {
@@ -45,24 +34,11 @@ public class EmployeeService {
         }
         return employee;
     }
-    /*
-    public Employee addEmployee(Employee employee) {
-        return employeeRepo.addEmployee(employee);
+
+    public void deleteEmployeeById(int id) {
+        this.employeeRepo.deleteById(id);
     }
 
-    public Employee findEmployeeById(int id) {
-        return employeeRepo.findEmployeeById(id);
-    }
-
-    public Boolean deleteEmployee(int id) {
-        return employeeRepo.deleteEmployee(id);
-    }
-
-    public Employee updateEmployee(int id, Employee employee) {
-        return employeeRepo.updateEmployee(id, employee);
-    }
-
-     */
 
 
 }

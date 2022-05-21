@@ -13,6 +13,7 @@
 <body>
 <h1>Motorhomes</h1>
 <a th:href = "@{/showNewMotorhomeForm}" class="btn btn-primary btn-sm mb-3"> Add Motorhome </a>
+<a th:href = "@{/admin}" class="btn btn-secondary btn-sm mb-3"> Back to admin page </a>
 <table  class="table table-bordered table-responsive-md">
         <thead class="thead-dark">
         <tr>
@@ -36,8 +37,8 @@
             <td th:text="${motorhome.price}"/>
             <td th:text="${motorhome.available}"/>
             <td>
-            <a th:href = "@{/newMotorhome}" class="btn btn-primary btn-sm"> Update</a>
-                <a th:href = "@{/newMotorhome}" class="btn btn-secondary btn-sm"> Delete </a>
+                <a th:href = "@{/showMotorhomeUpdateForm/{id}(id=${motorhome.id})}" class="btn btn-secondary btn-sm"> Update </a>
+                <a th:href = "@{/deleteMotorhome/{id}(id=${motorhome.id})}" class="btn btn-danger btn-sm"> Delete </a>
             </td>
         </tr>
         </tbody>

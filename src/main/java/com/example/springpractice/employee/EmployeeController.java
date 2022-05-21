@@ -1,6 +1,5 @@
 package com.example.springpractice.employee;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,16 +17,6 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
-
-    /*
-    @GetMapping("admin/employee")
-    public String index(Model model) {
-        List<Employee> employeeList = employeeService.fetchAllEmployees();
-        model.addAttribute("listOfEmployees", employeeList);
-        return "admin/employee/index";
-    }
-
-     */
 
 
     //display list of employees
@@ -51,69 +40,17 @@ public class EmployeeController {
         return "redirect:viewEmployeePage";
     }
 
-    @GetMapping("/showUpdateForm/{id}")
-    public String showUpdateForm(@PathVariable(value = "id") int id, Model model) {
+    @GetMapping("/showEmployeeUpdateForm/{id}")
+    public String showEmployeeUpdateForm(@PathVariable(value = "id") int id, Model model) {
         Employee employee = employeeService.getEmployeeById(id);
         model.addAttribute("employee",employee);
         return "admin/employee/updateEmployee";
     }
 
-
-    /*
-    //get the mapping for index page
-    @GetMapping("/")
-    //create a list of users @fetchAll() - add them to the model
-    public String index(Model model) {
-        List<Employee> employeeList = EmployeeService.fetchAll();
-        model.addAttribute("employee", employeeList);
-        return "employee/index";
+    @GetMapping("/deleteEmployee/{id}")
+    public String deleteEmployee(@PathVariable(value = "id")int id) {
+    this.employeeService.deleteEmployeeById(id);
+    return "redirect:/viewEmployeePage";
     }
-
-    //get the mapping for addUser page
-    @GetMapping("/addEmployee")
-    public String add() {
-        return "admin/employee/addEmployee";
-    }
-
-    //from addUser page - posts the new employee into the model(table)
-    //redirects to index page
-    @PostMapping("/addEmployee")
-    public String addUser(@ModelAttribute Employee employee) {
-        EmployeeService.addEmployee(employee);
-        return "redirect:/";
-    }
-
-    //get the mapping for viewUser page
-    //returns user via id
-    @GetMapping("/viewEmployee/{id}")
-    public String viewEmployee(@PathVariable("id") int id, Model model) {
-        model.addAttribute("employee", EmployeeService.findEmployeeById(id));
-        return "admin/employee/viewEmployee";
-    }
-
-    //deletes user via id
-    @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") int id) {
-        boolean deleted = EmployeeService.deleteEmployee(id);
-        return "redirect:/";
-    }
-
-    //get the mapping for editUser page
-    //returns user via id
-    @GetMapping("/editEmployee/{id}")
-    public String editEmployee(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", EmployeeService.findEmployeeById(id));
-        return "admin/employee/editEmployee";
-    }
-
-    //from editUser page - posts the edited employee into the model(table)
-    //redirects to index page
-    @PostMapping("/edit")
-    public String edit(@ModelAttribute Employee employee) {
-        EmployeeService.updateEmployee(employee.getId(), employee);
-        return "redirect:/";
-    }
-
-     */
 }
 
