@@ -14,39 +14,41 @@ public class EmployeeRepository {
     @Autowired
     private JdbcTemplate template;
 
-    public List<Employee> fetchAll() {
-        String sql = "select id, fulName, phoneNr, username, jobTitle  from employees";
-        RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
-        return template.query(sql, rowMapper);
-    }
-    /*
-    public Employee addEmployee(Employee emp) {
-        String sql = "insert into employees (firstname, lastname, dateOfBirth, address, city, phoneNr, username, jobTitle, credentials) Values (?,?,?)";
-        template.update(sql, emp.getFullName(),emp.getDateOfBirth(),emp.getAddress(),emp.getCity(), emp.getPhoneNr(), emp.getUsername(), emp.getJobTitle(), emp.getCredentials());
-        return null;
-    }
+        //retrieve the user id - user name - & favorite teacher from "users" table
+        public List<Employee> fetchAllEmployees() {
+            String sql = "select id, firstname, lastname, dob, phone_nr, email, address, city, job_title, admin, user_id from employee";
+            RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
+            return template.query(sql, rowMapper);
+        }
 
-    //find and show user information via user's id
-    public Employee findEmployeeById(int id) {
-        String sql = "select FullName, username, favTeacher from users where usrID = ?";
-        RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
-        Employee emp = template.queryForObject(sql, rowMapper, id);
-        return emp;
-    }
+        //add a new employee with id(auto-increments) - employee name - password - & favorite teacher
+        public Employee addEmployee(Employee employee) {
+            String sql = "insert into employee (first_name, last_name, phone_nr, email, address, city, job_title,admin) values (?, ?, ?, ?, ?, ?, ?, ?)";
+            template.update(sql, employee.getFirstName(), employee.getLastName(), employee.getPhoneNr(),employee.getEmail(),employee.getAddress(),employee.getCity(),employee.getJobTitle(),employee.isAdmin());
+            return null;
+        }
 
-    //delete a user via user id
-    public Boolean deleteEmployee(int id) {
-        String sql = "delete from Employee where id = ?";
-        return template.update(sql, id) > 0;
-    }
+        //find and show user information via user's id
+        public Employee findEmployeeById(int id) {
+            String sql = "select first_name, last_name, phone_nr, email, address, city, job_title,admin from employee where id = ?";
+            RowMapper<Employee> rowMapper = new BeanPropertyRowMapper<>(Employee.class);
+            Employee employee = template.queryForObject(sql, rowMapper, id);
+            return employee;
+        }
 
-    //find and edit a user's information via user's id
-    public Employee updateEmployee(int id, Employee emp) {
-        String sql = "update users set usrName = ?, favTeacher = ? where usrID = ?";
-        template.update(sql, emp.getFullName(), emp.getDateOfBirth(), emp.getAddress(), emp.getCity(), emp.getPhoneNr(), emp.getUsername(), emp.getJobTitle(), emp.getCredentials());
-        return null;
-    }
+        //delete a user via user id
+        public Boolean deleteEmployee(int id) {
+            String sql = "delete from employee where id = ?";
+            return template.update(sql, id) > 0;
+        }
 
-     */
+        //find and edit an employee's information via employee's id
+        public Employee updateEmployee(int id, Employee employee) {
+            String sql = "update employee set first_name = ?, last_name = ?, phone_nr = ?, email = ?, address = ?, city = ?, job_title = ?, admin = ? where id = ?";
+            template.update(sql, employee.getFirstName(), employee.getLastName(), employee.getPhoneNr(),employee.getEmail(),employee.getAddress(),employee.getCity(),employee.getJobTitle(),employee.isAdmin());
+            return null;
+        }
+
+
 
 }

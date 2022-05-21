@@ -25,14 +25,14 @@ public class Controller {
         return "admin";
     }
 
-    @PostMapping("admin/manageEmployee")
-    String manageEmployee(){
-        return "admin/manageEmployee";
+    @PostMapping("admin/employees")
+    String employees() {
+        return "admin/employees/index";
     }
 
-    @PostMapping("admin/manageMotorhomes")
-    String manageMotorhomes() {
-        return "admin/manageMotorhomes";
+    @PostMapping("admin/motorhomes")
+    String motorhomes() {
+        return "admin/motorhomes/index";
     }
 
 

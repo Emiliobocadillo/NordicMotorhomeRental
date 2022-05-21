@@ -1,4 +1,4 @@
-package com.example.springpractice.vehicle;
+package com.example.springpractice.motorhome;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -24,7 +24,7 @@ public class VehicleMaintenance {
 
     @ManyToOne
     @JoinColumn(name="vehicleid", insertable=false, updatable=false)
-    private Vehicle vehicle;
+    private Motorhome motorhome;
     private Integer vehicleid;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

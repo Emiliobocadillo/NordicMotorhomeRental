@@ -1,4 +1,4 @@
-package com.example.springpractice.vehicle;
+package com.example.springpractice.motorhome;
 
 public class VehicleMaintenanceController {
 }

@@ -5,15 +5,14 @@ import javax.persistence.*;
 
 import com.example.springpractice.user.User;
 import lombok.*;
-import org.hibernate.engine.internal.Cascade;
+
+import java.util.Date;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class Employee extends Person {
 
+    @Column(name = "jobTitle")
     private String jobTitle;
     private boolean admin;
 
@@ -21,4 +20,12 @@ public class Employee extends Person {
     @JoinColumn(name = "userId", referencedColumnName = "id")
     private User user;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "jobTitle='" + jobTitle + '\'' +
+                ", admin=" + admin +
+                ", user=" + user +
+                '}';
+    }
 }

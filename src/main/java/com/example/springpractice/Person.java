@@ -1,17 +1,12 @@
 package com.example.springpractice;
 
 import lombok.*;
-import org.hibernate.boot.model.relational.Sequence;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class Person {
 
     @Id
@@ -19,14 +14,18 @@ public class Person {
     @Column(name = "id",
     updatable = false)
     private int id;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name="lastname")
     private String lastName;
     @Column(unique = true)
     private String email;
     @Temporal(TemporalType.DATE)
+    @Column(name="dob")
     private Date dateOfBirth;
     private String address;
     private String city;
+    @Column(name="phoneNr")
     private String phoneNr;
 
 
@@ -91,6 +90,7 @@ public class Person {
                 ", phoneNr='" + phoneNr + '\'' +
                 '}';
     }
-    to be deleted if lombok getter, setter and so on works
+
      */
+
 }
