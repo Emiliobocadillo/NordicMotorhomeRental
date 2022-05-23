@@ -1,5 +1,6 @@
 package com.example.springpractice;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Person {
     private String firstName;
     @Column(name="lastname")
     private String lastName;
+
     @Column(unique = true)
     private String email;
     private String address;

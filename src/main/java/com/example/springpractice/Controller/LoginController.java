@@ -22,7 +22,7 @@ public class LoginController {
 
     @PostMapping("/checkUser")
     public String checkUser(@ModelAttribute User user){
-        return userService.checkUser(user,"/login","admin/admin", "admin/employee/employeePage" );
+        return userService.checkUser(user,"/login","admin/admin", "/showNewEmployeeForm" );
     }
 
     @PostMapping("/addNewUser")

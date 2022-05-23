@@ -1,4 +1,5 @@
 package com.example.springpractice.user;
+import com.example.springpractice.employee.Employee;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,12 @@ public class User {
 
     @Column(nullable = false)
     private  String password;
+
+    private boolean admin;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private Employee employee;
 
     /*
     //Constructor

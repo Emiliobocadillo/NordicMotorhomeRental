@@ -15,5 +15,4 @@ public class UserService {
         return userRepo.checkUser(user,loginPage, adminPage, employeePage);
     }
 
-
 }

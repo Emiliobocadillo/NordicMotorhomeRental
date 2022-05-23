@@ -3,6 +3,7 @@ package com.example.springpractice.employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -35,7 +36,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
+    public String saveEmployee(@Validated @ModelAttribute("employee") Employee employee) {
         employeeService.saveEmployee(employee);
         return "redirect:viewEmployeePage";
     }
