@@ -14,7 +14,7 @@ public class MotorhomeController {
     @Autowired
     private MotorhomeService motorhomeService;
 
-    //display list of employees
+    //display list of motorhomes
     @GetMapping("/viewMotorhomePage")
     public String viewMotorhomePage(Model model){
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
@@ -30,7 +30,7 @@ public class MotorhomeController {
     }
 
     @PostMapping("/saveMotorhome")
-    public String saveEmployee(@ModelAttribute("motorhome") Motorhome motorhome) {
+    public String saveMotorhome(@ModelAttribute("motorhome") Motorhome motorhome) {
         motorhomeService.saveMotorhome(motorhome);
         return "redirect:viewMotorhomePage";
     }

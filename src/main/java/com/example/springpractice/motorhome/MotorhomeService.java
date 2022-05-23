@@ -26,7 +26,7 @@ public class MotorhomeService {
         if(optional.isPresent()) {
             motorhome = optional.get();
         } else {
-            throw new RuntimeException(" Motorhome not found for id" + id);
+            throw new RuntimeException("Motorhome not found for id " + id);
         }
         return motorhome;
     }
