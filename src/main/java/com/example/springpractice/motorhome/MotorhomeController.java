@@ -18,7 +18,7 @@ public class MotorhomeController {
     @GetMapping("/viewMotorhomePage")
     public String viewMotorhomePage(Model model){
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
-        return "admin/motorhome/index";
+        return "admin/motorhome/motorhomePage";
     }
 
     //add new motorhome

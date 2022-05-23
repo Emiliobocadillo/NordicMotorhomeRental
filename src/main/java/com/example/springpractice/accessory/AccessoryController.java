@@ -18,7 +18,7 @@ public class AccessoryController {
     @GetMapping("/viewAccessoryPage")
     public String viewAccessoryPage(Model model){
         model.addAttribute("listOfAccessoories", accessoryService.getAllAccessories());
-        return "admin/accessory/index";
+        return "accessoryPage";
     }
 
     // add new accessory

@@ -11,7 +11,7 @@ public class EmployeeController {
     //Admin front page
     @GetMapping("/admin")
     String admin(){
-        return "admin/index";
+        return "admin/admin";
     }
 
 
@@ -23,7 +23,7 @@ public class EmployeeController {
     @GetMapping("/viewEmployeePage")
     public String viewEmployeePage(Model model){
     model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
-    return "admin/employee/index";
+    return "admin/employee/employeePage";
     }
 
     //add new employee
