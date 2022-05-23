@@ -3,7 +3,6 @@ package com.example.springpractice;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @MappedSuperclass
 @Data
@@ -24,12 +23,5 @@ public class Person {
     private String city;
     @Column(name="phoneNr")
     private String phoneNr;
-
-    /*
-    @Temporal(TemporalType.DATE)
-    @Column(name="dob")
-    private Date dateOfBirth;
-    properly getting deleted
-     */
 
 }

@@ -9,7 +9,6 @@ VALUES ('Douglas','Beaver','douglas.beaver@gmail.com','52525252','falkoner alle 
        ('Kim','Kaiser','Kim.Kaiser@gmail.com','6578945','Skelbækgade 3','København','Sales Assistent',FALSE),
        ('Martin','Hansen','Martin.Hansen@gmail.com','52404922','Smedetoften 20','København NV','Sales Assistent',FALSE),
        ('Nayeem','Hossain','Nayeem.Hossain@gmail.com','63547894','Roskildevej 32','Frederiksberg','Sales Assistent',FALSE);
-       ('Nayeem','Hossain','Nayeem.Hossain@gmail.com','63547894','Roskildevej 32','Frederiksberg','Sales Assistent',FALSE);
 
 
 

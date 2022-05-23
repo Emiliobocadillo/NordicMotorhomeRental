@@ -12,6 +12,7 @@ public class Motorhome {
     @Column(updatable = false)
     private int id;
     private String name;
+    private String type;
     private String make;
     private String model;
     private int beds;
