@@ -20,7 +20,7 @@ public class User {
     @Column(updatable = false)
     private int id;
     //change so it gets name from employee
-    private String name;
+    private String email;
 
     @Column(unique = true,
     nullable = false)
