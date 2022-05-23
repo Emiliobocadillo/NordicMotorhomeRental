@@ -27,7 +27,6 @@
                 <th scope="col">City</th>
                 <th scope="col">Job Title</th>
                 <th scope="col">Admin</th>
-                <th scope="col">User ID</th>
                 <th scope="col">Actions</th>
 
             </tr>
@@ -43,7 +42,6 @@
             <td th:text="${employee.city}"></td>
             <td th:text="${employee.jobTitle}"></td>
             <td th:text="${employee.admin}"></td>
-            <td th:text="${employee.user}"></td>
             <td>
                 <a th:href = "@{/showEmployeeUpdateForm/{id}(id=${employee.id})}" class="btn btn-secondary btn-sm"> Update </a>
                 <a th:href = "@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger btn-sm"> Delete </a>

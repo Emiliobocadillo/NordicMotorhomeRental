@@ -14,6 +14,11 @@ public class UserRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    /*
+    String sql = "INSERT into user (username,password,Employee_id,admin) " +
+            "SELECT '?','?' , Employee.id , employee.admin from employee WHERE employee.email ='Martin.nh.1993@gmail.com'";
+     */
+
     public String addUser(User user, String loginPage, String adminPage, String employeePage){
         int count = 0;
         String sql = "SELECT COUNT(username) FROM user WHERE username = ?";

@@ -22,7 +22,6 @@
             <th scope="col">Model</th>
             <th scope="col">Beds</th>
             <th scope="col">price</th>
-            <th scope="col">Available</th>
             <th scope="col">Actions</th>
 
 
@@ -35,7 +34,6 @@
             <td th:text="${motorhome.model}"/>
             <td th:text="${motorhome.beds}"/>
             <td th:text="${motorhome.price}"/>
-            <td th:text="${motorhome.available}"/>
             <td>
                 <a th:href = "@{/showMotorhomeUpdateForm/{id}(id=${motorhome.id})}" class="btn btn-secondary btn-sm"> Update </a>
                 <a th:href = "@{/deleteMotorhome/{id}(id=${motorhome.id})}" class="btn btn-danger btn-sm"> Delete </a>
