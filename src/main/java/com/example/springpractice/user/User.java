@@ -1,19 +1,12 @@
 package com.example.springpractice.user;
 import com.example.springpractice.employee.Employee;
 import com.mysql.cj.x.protobuf.MysqlxDatatypes;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-
+@Data
 public class User {
 
     @Id
@@ -21,6 +14,8 @@ public class User {
     @Column(updatable = false)
     private int id;
     //change so it gets name from employee
+    /*private String email;*/
+
     private String email;
 
     @Column(unique = true,
@@ -30,10 +25,8 @@ public class User {
     @Column(nullable = false)
     private  String password;
 
-    private boolean admin;
-
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @JoinColumn(name = "employeeId", referencedColumnName = "id")
     private Employee employee;
 
     /*

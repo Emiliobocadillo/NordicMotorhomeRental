@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 @Repository
@@ -14,10 +15,34 @@ public class UserRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+
     /*
-    String sql = "INSERT into user (username,password,Employee_id,admin) " +
-            "SELECT '?','?' , Employee.id , employee.admin from employee WHERE employee.email ='Martin.nh.1993@gmail.com'";
-     */
+    public String addNewUser(User user, String loginPage, String adminPage, String reservationPage) {
+        int count = 0;
+        String sql = "SELECT COUNT(username) FROM user WHERE username = ?";
+        count = jdbcTemplate.queryForObject(sql, new Object[]{user.getUsername()}, Integer.class);
+        if (count >= 1) {
+            System.out.println("User Exist");
+            return loginPage;
+        } else {
+            String sqlInsert = "INSERT into user (username,password,Employee_id)" +
+                    "SELECT '?','?', Employee.id from employee WHERE employee.email ='?'";
+            jdbcTemplate.update(sqlInsert, user.getUsername(), user.getPassword(),user.getEmail());
+        }
+        String sqlCheck = "SELECT e.admin from user left join employee e on e.id = user.employee_id\n" +
+                "where user.employee_id = ?";
+        boolean isAdmin = jdbcTemplate.queryForObject(sql, new Object[] {user.getEmployee().isAdmin()}, Boolean.class);
+
+            if (adminCredentials(user.getUsername())) {
+                return adminPage;
+            } else {
+                return reservationPage;
+            }
+        }
+    */
+
+
+
 
     public String addUser(User user, String loginPage, String adminPage, String employeePage){
         int count = 0;
@@ -43,7 +68,7 @@ public class UserRepo {
         }
     }
 
-    //Get employee email to check the ADMIN
+        //Get employee email to check the ADMIN
     public String getEmployeeEmail(String username, String password) {
         List<User> employees = jdbcTemplate.query(
                 "SELECT email FROM user WHERE username = ? AND password = ?;",
@@ -75,4 +100,36 @@ public class UserRepo {
         }
 
     }
+
+
+
+    public String updatedCheckUser(User user, String loginPage, String adminPage, String reservationPage){
+        int count = 0;
+        String sql = "SELECT COUNT(username) FROM user WHERE username = ? AND password = ?";
+
+        count = jdbcTemplate.queryForObject(sql, new Object[] {user.getUsername(), user.getPassword()}, Integer.class);
+        if (count == 1){
+
+            if (adminCredentials(user.getUsername())){
+                return adminPage;
+            }
+            else {
+                return reservationPage;
+            }
+
+        }else {
+            System.out.println("User not exist");
+            return loginPage;
+        }
+
+    }
+
+    public boolean adminCredentials(String username) {
+        String sql = "SELECT employee.admin from user left join employee on employee.id = user.employee_id where username = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[] {username}, Boolean.class);
+    }
 }
+
+
+
+

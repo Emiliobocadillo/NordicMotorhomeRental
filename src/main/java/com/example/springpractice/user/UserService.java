@@ -8,11 +8,11 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public String addUser(User user, String loginPage, String adminPage, String employeePage){
-        return userRepo.addUser(user, loginPage, adminPage, employeePage);
-    }
-    public String checkUser(User user, String loginPage, String adminPage, String employeePage){
-        return userRepo.checkUser(user,loginPage, adminPage, employeePage);
+    public String addUser(User user, String loginPage, String adminPage, String reservationPage){
+        return userRepo.addUser(user, loginPage, adminPage, reservationPage);
     }
 
+    public String checkUser(User user, String loginPage, String adminPage, String employeePage) {
+        return userRepo.checkUser(user, loginPage, adminPage, employeePage);
+    }
 }
