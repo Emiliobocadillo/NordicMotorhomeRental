@@ -18,12 +18,12 @@ public class RegistrationController {
         return "registration";
     }
 
-    @PostMapping("/addNewUser")
-    public String addNewUser(@ModelAttribute User user){
-        userService.addNewUser(user);
-        return "/registration";
-
-    }
+//    @PostMapping("/addNewUser")
+//    public String addNewUser(@ModelAttribute User user){
+//        userService.addNewUser(user);
+//        return "/registration";
+//
+//    }
 }
 
 

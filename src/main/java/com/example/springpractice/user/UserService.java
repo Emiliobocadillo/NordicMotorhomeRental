@@ -8,9 +8,12 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public User addNewUser(User user){
-       userRepo.addNewUser(user);
-       return null;
+    public String addUser(User user, String loginPage, String adminPage, String employeePage){
+        return userRepo.addUser(user, loginPage, adminPage, employeePage);
     }
+    public String checkUser(User user, String loginPage, String adminPage, String employeePage){
+        return userRepo.checkUser(user,loginPage, adminPage, employeePage);
+    }
+
 
 }

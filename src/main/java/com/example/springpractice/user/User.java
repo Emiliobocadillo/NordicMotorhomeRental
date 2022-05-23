@@ -1,4 +1,5 @@
 package com.example.springpractice.user;
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
