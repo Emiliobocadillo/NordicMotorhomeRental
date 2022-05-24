@@ -1,6 +1,6 @@
 package com.example.springpractice.accessory;
 
-import lombok.Data;
+import lombok.*;
 import javax.persistence.*;
 
 @Entity
@@ -9,11 +9,23 @@ public class Accessory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private int id;
     private String name;
-    private int totalStock;
+    private double pricePerDay;
     private int available;
     private int rentedOut;
-    private double pricePerDay;
+    private int totalStock;
+
+
+    @Override
+    public String toString() {
+        return "Accessory{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", pricePerDay=" + pricePerDay +
+                ", available=" + available +
+                ", rentedOut=" + rentedOut +
+                ", totalStock=" + totalStock +
+                '}';
+    }
 }

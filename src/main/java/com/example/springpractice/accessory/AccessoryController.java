@@ -13,12 +13,11 @@ public class AccessoryController {
 
     @Autowired AccessoryService accessoryService;
 
-
     // display list of accessories
     @GetMapping("/viewAccessoryPage")
     public String viewAccessoryPage(Model model){
-        model.addAttribute("listOfAccessoories", accessoryService.getAllAccessories());
-        return "accessoryPage";
+        model.addAttribute("listOfAccessories", accessoryService.getAllAccessories());
+        return "admin/accessory/accessoryPage";
     }
 
     // add new accessory
@@ -41,7 +40,6 @@ public class AccessoryController {
         model.addAttribute("accessory", accessory);
         return "admin/accessory/updateAccessory";
     }
-
 
     @GetMapping("/deleteAccessory/{id}")
     public String deleteAccessory(@PathVariable(value = "id") int id) {

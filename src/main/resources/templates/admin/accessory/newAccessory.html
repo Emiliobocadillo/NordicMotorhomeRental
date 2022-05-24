@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Add New Employee</title>
+  <title>Add New Accessory</title>
   <link rel="stylesheet" type="text/css" href="global.css">
   <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -14,20 +14,17 @@
 <body>
 
 <div align="center">
-  <h1>Add new Employee</h1>
-  <form th:action="@{/saveEmployee}" method="post" th:object="${employee}">
+  <h1>Add New Accessory</h1>
+  <form th:action="@{/saveAccessory}" method="post" th:object="${accessory}">
 
-    <input type="text" th:field="*{firstName}" placeholder="Firstname" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{lastName}" placeholder="Lastname" class="form-control mb-4 col-2">
-    <!--<input type="text" th:field="*{dateOfBirth}" placeholder="Date Of Birth" class="form-control mb-4 col-2"/>-->
-    <input type="text" th:field="*{phoneNr}" placeholder="Phone Nr" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{city}" placeholder="City" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{jobTitle}" placeholder="Job Title" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{pricePerDay}" placeholder="Price per day" class="form-control mb-4 col-2">
+    <input type="text" th:field="*{available}" placeholder="Available quantity" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{rentedOut}" placeholder="Rented out" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{totalStock}" placeholder="Total stock" class="form-control mb-4 col-2"/>
 
-    <button type="submit" class="btn btn-info col-2">Save Employee</button>
-    <a th:href = "@{/viewEmployeePage}" class="btn btn-secondary col-2"> Back </a>
+    <button type="submit" class="btn btn-info col-2">Save Accessory</button>
+    <a th:href = "@{/viewAccessoryPage}" class="btn btn-secondary col-2"> Back </a>
 
   </form>
 

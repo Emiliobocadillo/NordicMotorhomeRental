@@ -1,9 +1,8 @@
 package com.example.springpractice.accessory;
 
-
-import com.example.springpractice.motorhome.Motorhome;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class AccessoryService {
 
+
+    //dependency injection to use UserRepo class
     @Autowired
     private AccessoryRepo accessoryRepo;
+
 
     public List<Accessory> getAllAccessories(){return accessoryRepo.findAll();}
 
