@@ -16,12 +16,12 @@
   <h1>Add new Motorhome</h1>
   <form th:action="@{/saveMotorhome}" method="post" th:object="${motorhome}">
 
-    <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{type}" placeholder="Name" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{make}" placeholder="Make" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{model}" placeholder="Model" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{beds}" placeholder="Beds" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{price}" placeholder="Price" class="form-control mb-4 col-2"/>
+    <input type="text" name="name" placeholder="Name" class="form-control mb-4 col-2"/>
+    <input type="text" name="type" placeholder="Type" class="form-control mb-4 col-2"/>
+    <input type="text" name="make" placeholder="Make" class="form-control mb-4 col-2"/>
+    <input type="text" name="model" placeholder="Model" class="form-control mb-4 col-2"/>
+    <input type="text" name="beds" placeholder="Beds" class="form-control mb-4 col-2"/>
+    <input type="text" name="price"  placeholder="Price" class="form-control mb-4 col-2"/>
 
       <button type="submit" class="btn btn-info col-2">Save Motorhome</button>
       <a th:href = "@{/viewMotorhomePage}" class="btn btn-secondary col-2"> Back </a>
