@@ -15,4 +15,8 @@ public class UserService {
     public String checkUser(User user, String loginPage, String adminPage, String employeePage) {
         return userRepo.checkUser(user, loginPage, adminPage, employeePage);
     }
+
+    public String getAdminName(String username, String password){
+        return userRepo.getAdminName(username, password);
+    }
 }
