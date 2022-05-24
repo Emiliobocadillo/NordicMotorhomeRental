@@ -1,3 +1,5 @@
+use nmr;
+
 INSERT INTO employee (firstname, lastname, email, phone_nr, address, city, job_title, admin)
 VALUES ('Douglas','Beaver','douglas.beaver@gmail.com','52525252','falkoner alle 86 st. tv','Frederiksberg','owner',TRUE),
        ('Hanna','Beaver','Hanna.beaver@gmail.com','41414141','falkoner alle 86 st. tv','Frederiksberg','owner',TRUE),

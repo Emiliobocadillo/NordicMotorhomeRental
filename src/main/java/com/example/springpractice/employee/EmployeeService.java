@@ -14,7 +14,12 @@ public class EmployeeService {
     //dependency injection to use UserRepo class
     @Autowired
     private EmployeeRepo employeeRepo;
+/*
+    private checkEmail(){
+        employeeRepo.
+    }
 
+ */
 
     public List<Employee> getAllEmployees() {
         return employeeRepo.findAll();
