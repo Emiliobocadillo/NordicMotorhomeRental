@@ -26,6 +26,7 @@ public class LoginController {
     @PostMapping("/checkUser")
     public String checkUser(@ModelAttribute User user, Model model){
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
+        model.addAttribute("admin",userService.getAdminName(user.getUsername(),user.getPassword()));
         return userService.checkUser(user,"/login","admin/admin", "admin/employee/employeePage" );
     }
 

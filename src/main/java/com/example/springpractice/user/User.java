@@ -30,11 +30,11 @@ public class User {
     @Column(nullable = false)
     private  String password;
 
-    private boolean admin;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
-    private Employee employee;
+//    private boolean admin;
+//
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+//    private Employee employee;
 
     /*
     //Constructor

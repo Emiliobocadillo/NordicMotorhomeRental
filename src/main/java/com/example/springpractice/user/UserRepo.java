@@ -51,16 +51,24 @@ public class UserRepo {
         return employees.get(0).getEmail();
     }
 
+    public String getAdminName(String username, String password) {
+        List<Employee> employees = jdbcTemplate.query(
+                "SELECT firstname, lastname FROM employee AS e, user AS u WHERE e.email = (SELECT email FROM user WHERE username = ? AND password = ?);",
+                new BeanPropertyRowMapper<>(Employee.class), username, password );
+        return employees.get(0).getFirstName() + " " + employees.get(0).getLastName();
+    }
+
     public String checkUser(User user, String loginPage, String adminPage, String employeePage){
         int count = 0;
         String sql = "SELECT COUNT(username) FROM user WHERE username = ? AND password = ?";
-
         count = jdbcTemplate.queryForObject(sql, new Object[] {user.getUsername(), user.getPassword()}, Integer.class);
+
         if (count == 1){
 
             String retrievedEmail = getEmployeeEmail(user.getUsername(), user.getPassword());
             String sql2 = "SELECT e.admin FROM employee as e WHERE email = ?;";
             boolean admin = jdbcTemplate.queryForObject(sql2, new Object[] {retrievedEmail}, Boolean.class);
+            System.out.println(admin);
 
             if (admin==true){
                 return adminPage;
