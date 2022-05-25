@@ -30,13 +30,13 @@ public class LoginController {
     public String checkUser(@ModelAttribute User user, Model model){
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
         model.addAttribute("admin",userService.getAdminName(user.getUsername(),user.getPassword()));
-        return userService.checkUser(user,"/login","admin/admin", "admin/employee/employeePage" );
+        return userService.checkUser(model, user, "/login","admin/admin", "admin/employee/employeePage" );
     }
 
     @PostMapping("/addNewUser")
     public String addNewUser(@ModelAttribute User user, Model model){
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
-        return userService.addUser(user, "login", "admin/admin", "admin/employee/employeePage");
+        return userService.addUser(model, user, "login", "admin/admin", "admin/employee/employeePage");
     }
 
 
