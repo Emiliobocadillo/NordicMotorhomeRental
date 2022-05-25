@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @org.springframework.stereotype.Controller
 public class HomepageController {
 
-    @GetMapping
+    @GetMapping("/")
     String getHomepage(Model model){
         model.addAttribute("something", "this is coming from the controller");
         // thymeleaf knows that is has to look in the template folder for a file with the specified name
