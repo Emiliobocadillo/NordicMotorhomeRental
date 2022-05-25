@@ -1,3 +1,4 @@
+USE nmr;
 INSERT INTO motorhome (name, type, make, model, beds, price, available)
 VALUES ('Hans','Urban Plus Motorhomes','Sunlight ','Cliff 600',2,500,true),
        ('Gretel','Urban Plus Motorhomes','Toyota ','Hiace',2,600,true),

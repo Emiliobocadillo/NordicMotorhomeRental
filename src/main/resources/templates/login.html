@@ -1,53 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+
+    <!--
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    -->
+    <script src="https://kit.fontawesome.com/53348a3eee.js" crossorigin="anonymous"></script>
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="global.css">
+
 </head>
 <body>
-<div class="full-page">
-    <div class="navbar">
-        <div class="header">
-            <div class="nmr-header">
-                <p id="nordic">Nordic</p>
-                <p id="motorhome">Motorhome</p>
-                <p>Rental</p>
+<header id="home">
+    <!--navbar-->
+    <nav class="navbar">
+        <div class="nav-center">
+            <!--nav header-->
+            <div class="nav-header">
+                <a href="/"> <img src="/images/logo1.png" class="nav-logo" alt=""></a>
             </div>
-            <div class="login-header">
-                <h1>Login! </h1>
 
+            <!--Nav icons-->
+            <ul class="nav-icons">
+                <!--single icon-->
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="nav-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="nav-icon">
+                        <i class="fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="nav-icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+
+    <!--HERO SECTION-->
+    <div class="hero">
+        <div class="form-box">
+            <div class='button-box'>
+                <div id='btn'></div>
+                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
             </div>
+            <form id='login' class='input-group-login' th:action="@{/checkUser}" method="post">
+                <input type='text'class='input-field'name="username" placeholder='Username' required >
+                <input type='password'class='input-field'name="password" placeholder='Password' required>
+                <button  type='submit' class='submit-btn'>Log in</button>
+            </form>
+            <form id='register' class='input-group-register' action="/addNewUser" method="post">
+                <input type='text'class='input-field' name="email" placeholder='Email' required>
+                <input type='text'class='input-field' name="username" placeholder='Username ' required>
+                <input type='password'class='input-field' name="password" placeholder='Password' required>
+                <button  type='submit'class='submit-btn'>Register</button>
+            </form>
         </div>
-<!--        <nav>-->
-<!--            <ul id='MenuItems'>-->
-<!--                <li><a href='#'>Home</a></li>-->
-<!--                <li><a href='#'>About Us</a></li>-->
-<!--                <li><a href='#'>Services</a></li>-->
-<!--                <li><a href='#'>Contact</a></li>-->
-<!--            </ul>-->
-<!--        </nav>-->
     </div>
-    <div class="form-box">
-        <div class='button-box'>
-            <div id='btn'></div>
-            <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
-            <button type='button'onclick='register()'class='toggle-btn'>Register</button>
-        </div>
-        <form id='login' class='input-group-login' th:action="@{/checkUser}" method="post">
-            <input type='text'class='input-field'name="username" placeholder='Username' required >
-            <input type='password'class='input-field'name="password" placeholder='Password' required>
-            <button  type='submit' class='submit-btn'>Log in</button>
-        </form>
-        <form id='register' class='input-group-register' action="/addNewUser" method="post">
-            <input type='text'class='input-field' name="email" placeholder='Email' required>
-            <input type='text'class='input-field' name="username" placeholder='Username ' required>
-            <input type='password'class='input-field' name="password" placeholder='Password' required>
-            <button  type='submit'class='submit-btn'>Register</button>
-        </form>
     </div>
-</div>
+</header>
 
 <script>
     var x=document.getElementById('login');
@@ -66,6 +88,8 @@
         z.style.left='0px';
     }
 </script>
+
+
 
 </body>
 </html>

@@ -186,6 +186,10 @@ About
 .about-info{
     margin-bottom: 2rem;
 }
+img:not(.nav-logo){
+    width: 100%;
+    display: block;
+}
 
 @media screen and (min-width: 600px){
     .about-center{
