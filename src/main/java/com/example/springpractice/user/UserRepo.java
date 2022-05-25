@@ -1,50 +1,27 @@
 package com.example.springpractice.user;
 
+import com.example.springpractice.Controller.LoginController;
 import com.example.springpractice.employee.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class UserRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
+    ArrayList<User> loggedInAdmin = new ArrayList<>();
 
-
-    /*
-    public String addNewUser(User user, String loginPage, String adminPage, String reservationPage) {
-        int count = 0;
-        String sql = "SELECT COUNT(username) FROM user WHERE username = ?";
-        count = jdbcTemplate.queryForObject(sql, new Object[]{user.getUsername()}, Integer.class);
-        if (count >= 1) {
-            System.out.println("User Exist");
-            return loginPage;
-        } else {
-            String sqlInsert = "INSERT into user (username,password,Employee_id)" +
-                    "SELECT '?','?', Employee.id from employee WHERE employee.email ='?'";
-            jdbcTemplate.update(sqlInsert, user.getUsername(), user.getPassword(),user.getEmail());
-        }
-        String sqlCheck = "SELECT e.admin from user left join employee e on e.id = user.employee_id\n" +
-                "where user.employee_id = ?";
-        boolean isAdmin = jdbcTemplate.queryForObject(sql, new Object[] {user.getEmployee().isAdmin()}, Boolean.class);
-
-            if (adminCredentials(user.getUsername())) {
-                return adminPage;
-            } else {
-                return reservationPage;
-            }
-        }
-    */
-
-
-
-
-    public String addUser(User user, String loginPage, String adminPage, String employeePage){
+    // Add a new user
+    public String addUser(Model model, User user, String loginPage, String adminPage, String employeePage){
+        loggedInAdmin.clear();
         int count = 0;
         String sql = "SELECT COUNT(username) FROM user WHERE username = ?";
         count = jdbcTemplate.queryForObject(sql, new Object[] {user.getUsername()}, Integer.class);
@@ -60,6 +37,8 @@ public class UserRepo {
 
             if (admin == true){
                 jdbcTemplate.update(sql3, user.getEmail(), user.getUsername(), user.getPassword());
+                loggedInAdmin.add(user);
+                model.addAttribute("admin",getAdminName(user.getUsername(),user.getPassword()));
                 return adminPage;
             }else  {
                 jdbcTemplate.update(sql3, user.getEmail(), user.getUsername(), user.getPassword());
@@ -68,22 +47,9 @@ public class UserRepo {
         }
     }
 
-        //Get employee email to check the ADMIN
-    public String getEmployeeEmail(String username, String password) {
-        List<User> employees = jdbcTemplate.query(
-                "SELECT email FROM user WHERE username = ? AND password = ?;",
-                new BeanPropertyRowMapper<>(User.class), username, password );
-        return employees.get(0).getEmail();
-    }
-
-    public String getAdminName(String username, String password) {
-        List<Employee> employees = jdbcTemplate.query(
-                "SELECT firstname, lastname FROM employee AS e, user AS u WHERE e.email = (SELECT email FROM user WHERE username = ? AND password = ?);",
-                new BeanPropertyRowMapper<>(Employee.class), username, password );
-        return employees.get(0).getFirstName() + " " + employees.get(0).getLastName();
-    }
-
-    public String checkUser(User user, String loginPage, String adminPage, String employeePage){
+    // Check whether the user credential correct or  not.
+    public String checkUser(Model model, User user, String loginPage, String adminPage, String employeePage){
+        loggedInAdmin.clear();
         int count = 0;
         String sql = "SELECT COUNT(username) FROM user WHERE username = ? AND password = ?";
         count = jdbcTemplate.queryForObject(sql, new Object[] {user.getUsername(), user.getPassword()}, Integer.class);
@@ -96,6 +62,8 @@ public class UserRepo {
             System.out.println(admin);
 
             if (admin==true){
+                loggedInAdmin.add(user);
+                model.addAttribute("admin",getAdminName(user.getUsername(),user.getPassword()));
                 return adminPage;
             }
             else {
@@ -109,33 +77,30 @@ public class UserRepo {
 
     }
 
-
-
-    public String updatedCheckUser(User user, String loginPage, String adminPage, String reservationPage){
-        int count = 0;
-        String sql = "SELECT COUNT(username) FROM user WHERE username = ? AND password = ?";
-
-        count = jdbcTemplate.queryForObject(sql, new Object[] {user.getUsername(), user.getPassword()}, Integer.class);
-        if (count == 1){
-
-            if (adminCredentials(user.getUsername())){
-                return adminPage;
-            }
-            else {
-                return reservationPage;
-            }
-
-        }else {
-            System.out.println("User not exist");
-            return loginPage;
-        }
-
+    //Get employee email to check the ADMIN
+    public String getEmployeeEmail(String username, String password) {
+        List<User> employees = jdbcTemplate.query(
+                "SELECT email FROM user WHERE username = ? AND password = ?;",
+                new BeanPropertyRowMapper<>(User.class), username, password );
+        return employees.get(0).getEmail();
     }
 
-    public boolean adminCredentials(String username) {
-        String sql = "SELECT employee.admin from user left join employee on employee.id = user.employee_id where username = ?";
-        return jdbcTemplate.queryForObject(sql, new Object[] {username}, Boolean.class);
+    // Getting the admin name for admin page
+    public String getAdminName(String username, String password) {
+        List<Employee> employees = jdbcTemplate.query(
+                "SELECT firstname, lastname FROM employee AS e, user AS u WHERE e.email = (SELECT email FROM user WHERE username = ? AND password = ?);",
+                new BeanPropertyRowMapper<>(Employee.class), username, password );
+        return employees.get(0).getFirstName() + " " + employees.get(0).getLastName();
     }
+
+
+    public String getAdminUser(){
+        return loggedInAdmin.get(0).getUsername();
+    }
+    public String getAdminPassword(){
+        return loggedInAdmin.get(0).getPassword();
+    }
+
 }
 
 

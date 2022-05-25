@@ -1,5 +1,9 @@
 package com.example.springpractice.employee;
 
+import com.example.springpractice.Controller.LoginController;
+import com.example.springpractice.user.User;
+import com.example.springpractice.user.UserRepo;
+import com.example.springpractice.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,9 +13,15 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class EmployeeController {
 
+    @Autowired
+    UserService userService;
+    @Autowired
+    UserRepo userRepo;
+
     //Admin front page
     @GetMapping("/admin")
-    String admin(){
+    String admin(@ModelAttribute User user, Model model){
+        model.addAttribute("admin",userService.getAdminName( userRepo.getAdminUser() ,userRepo.getAdminPassword()));
         return "admin/admin";
     }
 

@@ -16,8 +16,8 @@ public class CustomerController {
     //display list of employees
     @GetMapping("/viewCustomerPage")
     public String viewCustomerPage(Model model){
-        model.addAttribute("listOfEmployees",customerService.getAllCustomers());
-        return "admin/customer/index";
+        model.addAttribute("listOfCustomers",customerService.getAllCustomers());
+        return "reservation/reservationPage";
     }
 
     //add new employee
@@ -25,7 +25,7 @@ public class CustomerController {
     public String showNewCustomerForm(Model model) {
         Customer customer = new Customer();
         model.addAttribute("customer",customer);
-        return "admin/customer/newCustomer";
+        return "reservation/customer/newCustomer";
     }
 
     @PostMapping("/saveCustomer")
@@ -38,7 +38,7 @@ public class CustomerController {
     public String showCustomerUpdateForm(@PathVariable(value = "id") int id, Model model) {
         Customer customer = customerService.getCustomerById(id);
         model.addAttribute("customer",customer);
-        return "admin/customer/updateCustomer";
+        return "reservation/updateCustomer";
     }
 
     @GetMapping("/deleteCustomer/{id}")

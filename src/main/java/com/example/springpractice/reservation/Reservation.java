@@ -1,35 +1,36 @@
 package com.example.springpractice.reservation;
 
+import com.example.springpractice.Person;
+import com.example.springpractice.accessory.Accessory;
 import com.example.springpractice.customer.Customer;
 import com.example.springpractice.motorhome.Motorhome;
 import com.example.springpractice.user.User;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
-public class Reservation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Reservation extends Person {
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private Date startDate;
+    private LocalDate startDate;
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private Date endDate;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerId", referencedColumnName = "id")
-    private Customer customer;
+    private LocalDate endDate;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private Motorhome motorhome;
+
+    @OneToMany
+    @JoinColumn(name = "accessory_id", referencedColumnName = "id")
+    private List<Accessory> accessory;
 
 }
 
