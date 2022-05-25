@@ -1,6 +1,5 @@
 package com.example.springpractice.reservation;
 
-import com.example.springpractice.customer.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +19,7 @@ public class ReservationController {
     @GetMapping("/viewReservationPage")
     public String viewReservationPage(Model model){
         model.addAttribute("listOfReservations", reservationService.getAllReservations());
-        return "admin/reservation/index";
+        return "reservation/reservationPage";
     }
 
     //add new employee
@@ -28,7 +27,7 @@ public class ReservationController {
     public String showNewReservationForm(Model model) {
         Reservation reservation = new Reservation();
         model.addAttribute("reservation", reservation);
-        return "admin/reservation/newReservation";
+        return "reservation/newReservation";
     }
 
     @PostMapping("/saveReservation")

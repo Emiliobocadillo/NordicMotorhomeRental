@@ -29,10 +29,14 @@ public class HomepageController {
         return "admin/employees/index";
     }
 
+
     @PostMapping("admin/motorhomes")
     String motorhomes() {
         return "admin/motorhomes/index";
     }
 
-
+    @PostMapping ("reservation/reversions")
+    String reservation() {
+        return "reservation/reservationPage";
+    }
 }

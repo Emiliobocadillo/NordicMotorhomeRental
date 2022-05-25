@@ -9,7 +9,7 @@
     height: 100%;
     width: 100%;
     /*background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/bg-2.jpg);*/
-    background: linear-gradient(rgba(44, 174, 186, 0.7), rgba(0,0,0,0.7)), url('./images/motorhomes.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(44, 174, 186, 0.7), rgba(0,0,0,0.7)), url('../images/motorhomes.jpg') center/cover no-repeat;
 
     background-position: center;
     background-size: cover;
