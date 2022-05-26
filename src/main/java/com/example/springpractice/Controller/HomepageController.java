@@ -35,7 +35,7 @@ public class HomepageController {
         return "admin/motorhomes/index";
     }
 
-    @PostMapping ("reservation/reversions")
+    @PostMapping ("admin/reservations")
     String reservation() {
         return "reservation/reservationPage";
     }

@@ -14,10 +14,13 @@
 <h1>Motorhomes</h1>
 <a th:href = "@{/showNewMotorhomeForm}" class="btn btn-primary btn-sm mb-3"> Add Motorhome </a>
 <a th:href = "@{/admin}" class="btn btn-secondary btn-sm mb-3"> Back to admin page </a>
+
 <table  class="table table-bordered table-responsive-md">
+
         <thead class="thead-dark">
         <tr>
             <th scope="col">Name</th>
+            <th scope="col">Type</th>
             <th scope="col">Make</th>
             <th scope="col">Model</th>
             <th scope="col">Beds</th>
@@ -30,6 +33,7 @@
         <tbody>
         <tr th:each="motorhome: ${listOfMotorhomes}">
             <td th:text="${motorhome.name}"/>
+            <td th:text="${motorhome.motorhomeType.type}"/>
             <td th:text="${motorhome.make}"/>
             <td th:text="${motorhome.model}"/>
             <td th:text="${motorhome.beds}"/>

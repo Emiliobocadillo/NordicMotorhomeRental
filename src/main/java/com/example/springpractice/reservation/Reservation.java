@@ -18,13 +18,21 @@ import java.util.List;
 @Data
 public class Reservation extends Person {
 
+    @Column(name = "AoP")
+    private int amountOfPeople;
+
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate startDate;
 
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate endDate;
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    //@OneToOne
+    //@JoinColumn(name = "motorhomeTypeId", referencedColumnName = "id")
+    //private MotorhomeType motorhomeType;
+
+    @OneToOne
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private Motorhome motorhome;
 

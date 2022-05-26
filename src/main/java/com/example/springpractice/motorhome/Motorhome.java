@@ -1,5 +1,6 @@
 package com.example.springpractice.motorhome;
 
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeType;
 import lombok.Data;
 import javax.persistence.*;
 
@@ -12,7 +13,10 @@ public class Motorhome {
     @Column(updatable = false)
     private int id;
     private String name;
-    private String type;
+
+    @OneToOne
+    @JoinColumn(name = "type", referencedColumnName = "id")
+    private MotorhomeType motorhomeType;
     private String make;
     private String model;
     private int beds;

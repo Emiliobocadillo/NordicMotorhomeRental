@@ -1,5 +1,6 @@
 package com.example.springpractice.motorhome;
 
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +15,14 @@ public class MotorhomeController {
     @Autowired
     private MotorhomeService motorhomeService;
 
+    @Autowired
+    private MotorhomeTypeService motorhomeTypeService;
+
     //display list of motorhomes
     @GetMapping("/viewMotorhomePage")
     public String viewMotorhomePage(Model model){
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
+        model.addAttribute("listOfTypes",motorhomeTypeService.getAllTypes());
         return "admin/motorhome/motorhomePage";
     }
 
@@ -26,6 +31,7 @@ public class MotorhomeController {
     public String showNewMotorhomeForm(Model model) {
         Motorhome motorhome = new Motorhome();
         model.addAttribute("motorhome",motorhome);
+        model.addAttribute("listOfTypes", motorhomeTypeService.getAllTypes());
         return "admin/motorhome/newMotorhome";
     }
 
@@ -39,6 +45,7 @@ public class MotorhomeController {
     public String showMotorhomeUpdateForm(@PathVariable(value = "id") int id, Model model) {
         Motorhome motorhome = motorhomeService.getMotorhomeById(id);
         model.addAttribute("motorhome",motorhome);
+        model.addAttribute("listOfTypes", motorhomeTypeService.getAllTypes());
         return "admin/motorhome/updateMotorhome";
     }
 

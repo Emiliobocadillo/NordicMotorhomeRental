@@ -16,12 +16,14 @@
         <input type="hidden" th:field="*{id}"/>
 
         <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-2"/>
-        <input type="text" th:field="*{type}" placeholder="Name" class="form-control mb-4 col-2"/>
         <input type="text" th:field="*{make}" placeholder="Make" class="form-control mb-4 col-2"/>
         <input type="text" th:field="*{model}" placeholder="Model" class="form-control mb-4 col-2"/>
         <input type="text" th:field="*{beds}" placeholder="Beds" class="form-control mb-4 col-2"/>
         <input type="text" th:field="*{price}" placeholder="Price" class="form-control mb-4 col-2"/>
-
+        <select th:field="*{motorhomeType}">
+            <option th:each="t : ${listOfTypes}" th:value="${t.id}" th:text="${t.type}"/>
+        </select>
+        <br>
         <button type="submit" class="btn btn-info col-2">Save Motorhome</button>
         <a th:href = "@{/viewMotorhomePage}" class="btn btn-secondary col-2"> Back </a>
 

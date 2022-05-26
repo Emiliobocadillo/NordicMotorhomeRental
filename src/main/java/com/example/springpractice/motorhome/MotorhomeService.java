@@ -1,5 +1,6 @@
 package com.example.springpractice.motorhome;
 
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,12 @@ public class MotorhomeService {
 
     @Autowired
     private MotorhomeRepo motorhomeRepo;
+
+    @Autowired
+    private MotorhomeRepository motorhomeRepository;
+
+    @Autowired
+    private MotorhomeTypeRepo motorhomeTypeRepo;
 
     public List<Motorhome> getAllMotorhomes() {
         return motorhomeRepo.findAll();
@@ -33,5 +40,9 @@ public class MotorhomeService {
 
     public void deleteMotorhomeById(int id) {
         this.motorhomeRepo.deleteById(id);
+    }
+
+    public List<Motorhome> findAllByType(int id) {
+        return motorhomeRepository.findAllByType(id);
     }
 }
