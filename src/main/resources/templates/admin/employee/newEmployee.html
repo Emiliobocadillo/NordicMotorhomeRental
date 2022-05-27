@@ -13,24 +13,61 @@
 </head>
 <body>
 
-    <div align="center">
+    <div class="container mt-5">
         <h1>Add new Employee</h1>
         <form th:action="@{/saveEmployee}" method="post" th:object="${employee}">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" name="firstName" class="form-control" id="firstname" required/>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" name="lastName" class="form-control" id="lastname" required>
+                </div>
+            </div>
 
-            <input type="text" name="firstName" placeholder="Firstname" class="form-control mb-4 col-2"/>
-            <input type="text" name="lastName" placeholder="Lastname" class="form-control mb-4 col-2">
-            <input type="text" name="phoneNr" placeholder="Phone Nr" class="form-control mb-4 col-2"/>
-            <input type="text" name="email" placeholder="Email" class="form-control mb-4 col-2"/>
-            <input type="text" name="address" placeholder="Address" class="form-control mb-4 col-2"/>
-            <input type="text" name="city" placeholder="City" class="form-control mb-4 col-2"/>
-            <input type="text" name="jobTitle" placeholder="Job Title" class="form-control mb-4 col-2"/>
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" class="form-control" required/>
+                </div>
+                <div class="col-md-4">
+                    <label for="phoneNr">Phone Number</label>
+                    <input type="text" name="phoneNr" id="phoneNr" class="form-control" required/>
+                </div>
+            </div>
 
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" class="form-control" required/>
+                </div>
+                <div class="col-md-2">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" class="form-control" required/>
+                </div>
+                <div class="col-md-4">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" name="jobTitle" id="jobTitle" class="form-control" required/>
+                </div>
+
+            </div>
+            <br>
+            <div class="form-check">
+                <input type="checkbox" name="admin" id="is-admin" class="form-check-input" >
+                <label for="is-admin">Has Admin permission</label>
+            </div>
+
+
+            <br>
+            <div align="center">
             <button type="submit" class="btn btn-info col-2">Save Employee</button>
             <a th:href = "@{/viewEmployeePage}" class="btn btn-secondary col-2"> Back </a>
-
+            </div>
         </form>
 
-    </div>
 
+    </div>
 </body>
 <html>

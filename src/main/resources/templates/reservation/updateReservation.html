@@ -10,9 +10,9 @@
 </head>
 <body>
 
-    <h1>Update Reservation</h1>
-        <div class="container mt-5">
 
+        <div class="container mt-5">
+            <h1>Update Employee</h1>
             <form th:action="@{/saveReservation}" method="post" th:object="${reservation}">
                 <input type="hidden" th:field="*{id}"/>
 

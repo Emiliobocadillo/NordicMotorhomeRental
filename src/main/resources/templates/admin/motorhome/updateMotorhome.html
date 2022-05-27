@@ -9,27 +9,49 @@
           crossorigin="anonymous">
 </head>
 <body>
-<div align="center">
+
+<div class="container mt-5">
     <h1>Update Motorhome</h1>
     <form th:action="@{/saveMotorhome}" method="post" th:object="${motorhome}">
-
         <input type="hidden" th:field="*{id}"/>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" class="form-control" id="name" required/>
+            </div>
+            <div class="col-md-6">
+                <label for="make">Make</label>
+                <input type="text" th:field="*{make}" class="form-control" id="make" required>
+            </div>
+        </div>
 
-        <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-2"/>
-        <input type="text" th:field="*{make}" placeholder="Make" class="form-control mb-4 col-2"/>
-        <input type="text" th:field="*{model}" placeholder="Model" class="form-control mb-4 col-2"/>
-        <input type="text" th:field="*{beds}" placeholder="Beds" class="form-control mb-4 col-2"/>
-        <input type="text" th:field="*{price}" placeholder="Price" class="form-control mb-4 col-2"/>
-        <select th:field="*{motorhomeType}">
-            <option th:each="t : ${listOfTypes}" th:value="${t.id}" th:text="${t.type}"/>
-        </select>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label for="model">Model</label>
+                <input type="text" th:field="*{model}" class="form-control" id="model" required>
+            </div>
+            <div class="col-md-4">
+                <label for="beds">Amount of Beds</label>
+                <input type="number" th:field="*{beds}" id="beds" class="form-control" min="1" max="6" required/>
+            </div>
+            <div class="col-md-4">
+                <label for="price">Price</label>
+                <input type="text" th:field="*{price}" id="price" placeholder="0.0" class="form-control" required/>
+            </div>
+        </div>
         <br>
-        <button type="submit" class="btn btn-info col-2">Save Motorhome</button>
-        <a th:href = "@{/viewMotorhomePage}" class="btn btn-secondary col-2"> Back </a>
+        <div class="form-group">
+            <label>Type of Motorhome</label>
+            <select th:field="*{motorhomeType}">
+                <option th:each="t : ${listOfTypes}" th:value="${t.id}" th:text="${t.type}"/>
+            </select>
+        </div>
 
+        <div align="center">
+            <button type="submit" class="btn btn-info col-2">Save Employee</button>
+            <a th:href = "@{//viewMotorhomePage}" class="btn btn-secondary col-2"> Back </a>
+        </div>
     </form>
-
-</div>
 
 
 </body>

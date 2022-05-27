@@ -14,16 +14,18 @@ public class Person {
     @Column(name = "id",
     updatable = false)
     private int id;
-    @Column(name = "firstname")
+    @Column(name = "firstname",nullable = false)
     private String firstName;
-    @Column(name="lastname")
+    @Column(name="lastname", nullable = false)
     private String lastName;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
+    @Column(nullable = false)
     private String address;
+    @Column(nullable = false)
     private String city;
-    @Column(name="phoneNr")
+    @Column(name="phoneNr",nullable = false)
     private String phoneNr;
 
 }
