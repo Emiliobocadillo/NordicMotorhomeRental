@@ -12,7 +12,7 @@
 
 
         <div class="container mt-5">
-            <h1>Update Employee</h1>
+            <h1>Update Reservation</h1>
             <form th:action="@{/saveReservation}" method="post" th:object="${reservation}">
                 <input type="hidden" th:field="*{id}"/>
 
@@ -71,9 +71,10 @@
                 </div>
 
         <br>
+                <div>
         <button type="submit" class="btn btn-info col-2">Save Motorhome</button>
         <a th:href = "@{/viewReservationPage}" class="btn btn-secondary col-2"> Back </a>
-
+                </div>
     </form>
 
 </div>
