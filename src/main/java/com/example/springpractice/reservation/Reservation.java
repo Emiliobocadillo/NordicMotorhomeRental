@@ -21,11 +21,15 @@ public class Reservation extends Person {
     @Column(name = "AoP")
     private int amountOfPeople;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate startDate;
+    //@DateTimeFormat(pattern = "dd-MM-yyyy")
+    //private LocalDate startDate;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate endDate;
+    //@DateTimeFormat(pattern = "dd-MM-yyyy")
+    //private LocalDate endDate;
+
+    String startDate;
+
+    String endDate;
 
 
     //@OneToOne

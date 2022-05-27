@@ -1,5 +1,7 @@
 package com.example.springpractice.motorhome.motorhomeType;
 
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeType;
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
