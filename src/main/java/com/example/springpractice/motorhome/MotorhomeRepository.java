@@ -14,6 +14,7 @@ public class MotorhomeRepository {
     @Autowired
     private JdbcTemplate template;
 
+    //properly to be deleted
     public List<Motorhome> findAllByType(int type) {
         String sql = "select name, make, model, beds, price from motorhome where type = ? ";
         RowMapper<Motorhome> rowMapper = new BeanPropertyRowMapper<>(Motorhome.class);

@@ -10,16 +10,19 @@ import java.util.Optional;
 @Service
 public class ReservationService {
 
+    //Dependency injection
     @Autowired
     private ReservationRepo reservationRepo;
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-
+    //Gets all reservation from the database
     public List<Reservation> getAllReservations() {
         return reservationRepo.findAll();
     }
 
+    //Unique email
+    //Checks that the mail you're trying to enter don't exist before saving
     public String saveReservation(Reservation reservation, String reservationPage ,String newReservationPage) {
         int count = 0;
         String sql = "SELECT COUNT(email) FROM reservation WHERE email = ?";
@@ -34,6 +37,7 @@ public class ReservationService {
 
     }
 
+    //gets specific reservation with the selected ID
     public Reservation getReservationById(int id){
         Optional<Reservation> optional = reservationRepo.findById(id);
         Reservation reservation = null;
@@ -45,6 +49,7 @@ public class ReservationService {
         return reservation;
     }
 
+    //Delete reservation with selected ID
     public void deleteReservationById(int id) {
         this.reservationRepo.deleteById(id);
     }

@@ -10,16 +10,16 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class ReservationController {
 
+    //Dependency injection
     @Autowired
     private ReservationService reservationService;
     @Autowired
     private MotorhomeTypeService motorhomeTypeService;
-
     @Autowired
     private MotorhomeService motorhomeService;
 
 
-    //display list of employees
+    //Displays a list of reservations
     @GetMapping("/viewReservationPage")
     public String viewReservationPage(Model model){
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
@@ -27,7 +27,7 @@ public class ReservationController {
         return "reservation/reservationPage";
     }
 
-    //add new employee
+    //Displays form for adding a new Reservation
     @GetMapping("/showNewReservationForm")
     public String showNewReservationForm(Model model) {
         Reservation reservation = new Reservation();
@@ -36,27 +36,15 @@ public class ReservationController {
         return "reservation/newReservation";
     }
 
-    @GetMapping("/selectMotorhome")
-    public String showAvailableMotorhomes(Model model) {
-        model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
-        return "reservation/selectMotorhome";
-    }
-
+    //submit the values from the forms AddNewReservation or UpdateReservation to the database
     @PostMapping("/saveReservation")
     public String saveReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
-        //        reservationService.saveReservation(reservation);
         return reservationService.saveReservation(reservation, "redirect:/viewReservationPage", "reservation/newReservation");
     }
 
-    @PostMapping("/saveCustomer")
-    public String saveCustomer(@ModelAttribute("reservation") Reservation reservation) {
-        return reservationService.saveReservation(reservation, "reservation/reservationPage", "reservation/newReservation");
-//        reservationService.saveReservation(reservation);
-//        return "redirect:selectMotorhome";
-    }
-
+    //Displays form for updating reservation by selected ID
     @GetMapping("/showReservationUpdateForm/{id}")
     public String showReservationUpdateForm(@PathVariable(value = "id") int id, Model model) {
         Reservation reservation = reservationService.getReservationById(id);
@@ -65,6 +53,7 @@ public class ReservationController {
         return "reservation/updateReservation";
     }
 
+    //Delete reservation with selected ID
     @GetMapping("/deleteReservation/{id}")
     public String deleteReservation(@PathVariable(value = "id")int id) {
         this.reservationService.deleteReservationById(id);

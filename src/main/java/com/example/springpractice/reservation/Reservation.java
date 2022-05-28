@@ -24,10 +24,6 @@ public class Reservation extends Person {
 
     String endDate;
 
-    //@OneToOne
-    //@JoinColumn(name = "motorhomeTypeId", referencedColumnName = "id")
-    //private MotorhomeType motorhomeType;
-
     @OneToOne
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private Motorhome motorhome;

@@ -63,7 +63,7 @@ VALUES ('Hans',1,'Sunlight ','Cliff 600',2,500),
        ('Polo',5,'Mercedes', 'Marco Polo',4,700),
        ('Mitch',5,'Mercedes', 'Marco Polo',4,700),
 
-       ('Kim',6,'Sunlight', 'I67S',2,60),
+       ('Kim',6,'Sunlight', 'I67S',2,600),
        ('Simona',6,'Dethleffs', 'Pulse Classic 90 T 7051 EB',4,90),
        ('Cassandra',6,'Mercedes Benz','Discovery',4,110),
        ('Mads',6,'Tiffin','WAYFARER', 5,120),

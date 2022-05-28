@@ -11,7 +11,7 @@ import java.util.Optional;
 public class EmployeeService {
 
 
-    //dependency injection to use UserRepo class
+    //dependency injection to use EmployeeRepo class
     @Autowired
     private EmployeeRepo employeeRepo;
 /*
@@ -21,14 +21,17 @@ public class EmployeeService {
 
  */
 
+    //get a list of all employees from database
     public List<Employee> getAllEmployees() {
         return employeeRepo.findAll();
     }
 
+    //Save an employee to the satabase
     public void saveEmployee(Employee employee) {
         this.employeeRepo.save(employee);
     }
 
+    //get employee with specific ID from database
     public Employee getEmployeeById(int id){
         Optional<Employee> optional = employeeRepo.findById(id);
         Employee employee = null;
@@ -41,6 +44,7 @@ public class EmployeeService {
     }
 
 
+    //Delete an employee from database
     public void deleteEmployeeById(int id) {
         this.employeeRepo.deleteById(id);
     }

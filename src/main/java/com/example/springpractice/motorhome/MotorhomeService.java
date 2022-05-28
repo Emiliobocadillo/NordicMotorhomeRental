@@ -10,23 +10,23 @@ import java.util.Optional;
 @Service
 public class MotorhomeService {
 
+    //dependency injection
     @Autowired
     private MotorhomeRepo motorhomeRepo;
-
     @Autowired
     private MotorhomeRepository motorhomeRepository;
 
-    @Autowired
-    private MotorhomeTypeRepo motorhomeTypeRepo;
-
+    //Get all motorhomes from database
     public List<Motorhome> getAllMotorhomes() {
         return motorhomeRepo.findAll();
     }
 
+    //saves motorhome to the database
     public void saveMotorhome(Motorhome motorhome) {
         this.motorhomeRepo.save(motorhome);
     }
 
+    //gets specific motorhome with the selected ID
     public Motorhome getMotorhomeById(int id){
         Optional<Motorhome> optional = motorhomeRepo.findById(id);
         Motorhome motorhome = null;
@@ -38,11 +38,9 @@ public class MotorhomeService {
         return motorhome;
     }
 
+    //deletes motorhome with selected ID
     public void deleteMotorhomeById(int id) {
         this.motorhomeRepo.deleteById(id);
     }
 
-    public List<Motorhome> findAllByType(int id) {
-        return motorhomeRepository.findAllByType(id);
-    }
 }

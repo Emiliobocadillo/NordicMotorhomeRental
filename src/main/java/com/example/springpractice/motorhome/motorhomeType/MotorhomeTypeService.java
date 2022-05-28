@@ -10,15 +10,15 @@ import java.util.List;
 @Service
 public class MotorhomeTypeService {
 
+    ////dependency injection
     @Autowired
     private MotorhomeTypeRepo motorhomeTypeRepo;
 
+    //Get all types of motorhomes from database
     public List<MotorhomeType> getAllTypes() {
         return motorhomeTypeRepo.findAll();
     }
 
-    public void saveMotorhomeType(MotorhomeType motorhomeType) {
-        this.motorhomeTypeRepo.save(motorhomeType);
-    }
+    //public void saveMotorhomeType(MotorhomeType motorhomeType) {this.motorhomeTypeRepo.save(motorhomeType);}
 
 }
