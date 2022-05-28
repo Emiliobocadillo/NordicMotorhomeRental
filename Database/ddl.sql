@@ -1,5 +1,5 @@
 CREATE DATABASE nmr;
-USE nmr;
+/*USE nmr;
 
 SELECT e.admin FROM user AS u, employee AS e WHERE u.email = e.email AND e.job_title = 'owner';
 
@@ -11,4 +11,4 @@ CREATE PROCEDURE `findAdmin` (email VARCHAR(255))
 BEGIN
     SELECT e.admin FROM user AS u, employee AS e WHERE u.email = e.email;
 END $$
-DELIMITER ;
+DELIMITER ;*/

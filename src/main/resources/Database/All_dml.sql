@@ -19,7 +19,7 @@ VALUES ('Douglas','Beaver','douglas.beaver@gmail.com','52525252','falkoner alle 
        ('Brian','Sørensen','Brian.Sørensen@gmail.com','45678945','nørre farimagsgade 25','København K','Cleaning Staff',FALSE),
        ('Anders','knudsen','Anders.Knudsen@gmail.com','15647895','Vigerslev Allé  21','Valby','Auto Mechanic',FALSE),
        ('Simone','Jensen','Simone.Jensen@gmail.com','63548951','øster farimagsgade 25','København K','Sales Assistent',FALSE),
-       ('Kim','Kaiser','Kim.Kaiser@gmail.com','6578945','Skelbækgade 3','København','Sales Assistent',FALSE),
+       ('Kim','Kaiser','Kim.Keiser@gmail.com','6578945','Skelbækgade 3','København','Sales Assistent',FALSE),
        ('Martin','Hansen','Martin.Hansen@gmail.com','52404922','Smedetoften 20','København NV','Sales Assistent',FALSE),
        ('Nayeem','Hossain','Nayeem.Hossain@gmail.com','63547894','Roskildevej 32','Frederiksberg','Sales Assistent',FALSE);
 
