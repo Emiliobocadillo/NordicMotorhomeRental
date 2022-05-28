@@ -1,6 +1,9 @@
 package com.example.springpractice.Controller;
 
 import com.example.springpractice.employee.EmployeeService;
+import com.example.springpractice.motorhome.MotorhomeService;
+import com.example.springpractice.motorhome.motorhomeType.MotorhomeTypeService;
+import com.example.springpractice.reservation.ReservationService;
 import com.example.springpractice.user.User;
 import com.example.springpractice.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,10 @@ public class LoginController {
     UserService userService;
     @Autowired
     EmployeeService employeeService;
+    @Autowired
+    private ReservationService reservationService;
+    @Autowired
+    private MotorhomeService motorhomeService;
 
     @GetMapping("/login")
     String login(){
@@ -23,20 +30,20 @@ public class LoginController {
     }
 
 
-
-
-
     @PostMapping("/checkUser")
     public String checkUser(@ModelAttribute User user, Model model){
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
-        model.addAttribute("admin",userService.getAdminName(user.getUsername(),user.getPassword()));
-        return userService.checkUser(model, user, "/login","admin/admin", "admin/employee/employeePage" );
+        model.addAttribute("listOfReservations",reservationService.getAllReservations());
+        model.addAttribute("motorhome",motorhomeService.getAllMotorhomes());
+        return userService.checkUser(model, user, "/login","redirect:/admin", "redirect:/viewReservationPage" );
     }
 
     @PostMapping("/addNewUser")
     public String addNewUser(@ModelAttribute User user, Model model){
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
-        return userService.addUser(model, user, "login", "admin/admin", "admin/employee/employeePage");
+        model.addAttribute("listOfReservations",reservationService.getAllReservations());
+        model.addAttribute("motorhome",motorhomeService.getAllMotorhomes());
+        return userService.addUser(model, user, "login", "redirect:/admin", "redirect:/viewReservationPage");
     }
 
 

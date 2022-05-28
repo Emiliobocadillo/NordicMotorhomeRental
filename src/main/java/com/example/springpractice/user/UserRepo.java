@@ -93,7 +93,6 @@ public class UserRepo {
         return employees.get(0).getFirstName() + " " + employees.get(0).getLastName();
     }
 
-
     public String getAdminUser(){
         return loggedInAdmin.get(0).getUsername();
     }

@@ -13,8 +13,8 @@ public class UserService {
         return userRepo.addUser(model,user, loginPage, adminPage, reservationPage);
     }
 
-    public String checkUser(Model model, User user, String loginPage, String adminPage, String employeePage) {
-        return userRepo.checkUser(model, user, loginPage, adminPage, employeePage);
+    public String checkUser(Model model, User user, String loginPage, String adminPage, String reservationPage) {
+        return userRepo.checkUser(model, user, loginPage, adminPage, reservationPage);
     }
 
     public String getAdminName(String username, String password){

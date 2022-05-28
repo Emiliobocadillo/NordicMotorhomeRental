@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController {
-
-    @Autowired
-    UserService userService;
     @Autowired
     UserRepo userRepo;
 
     //Admin front page
     @GetMapping("/admin")
     String admin(@ModelAttribute User user, Model model){
-        model.addAttribute("admin",userService.getAdminName( userRepo.getAdminUser() ,userRepo.getAdminPassword()));
+        model.addAttribute("admin",userRepo.getAdminName( userRepo.getAdminUser() ,userRepo.getAdminPassword()));
         return "admin/admin";
     }
 

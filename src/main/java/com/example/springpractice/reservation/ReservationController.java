@@ -43,15 +43,18 @@ public class ReservationController {
     }
 
     @PostMapping("/saveReservation")
-    public String saveReservation(@ModelAttribute("reservation") Reservation reservation) {
-        reservationService.saveReservation(reservation);
-        return "redirect:viewReservationPage";
+    public String saveReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
+        model.addAttribute("listOfReservations",reservationService.getAllReservations());
+        model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
+        //        reservationService.saveReservation(reservation);
+        return reservationService.saveReservation(reservation, "redirect:/viewReservationPage", "reservation/newReservation");
     }
 
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("reservation") Reservation reservation) {
-        reservationService.saveReservation(reservation);
-        return "redirect:selectMotorhome";
+        return reservationService.saveReservation(reservation, "reservation/reservationPage", "reservation/newReservation");
+//        reservationService.saveReservation(reservation);
+//        return "redirect:selectMotorhome";
     }
 
     @GetMapping("/showReservationUpdateForm/{id}")
