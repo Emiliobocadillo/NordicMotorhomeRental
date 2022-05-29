@@ -44,7 +44,12 @@ public class EmployeeController {
 
     @PostMapping("/saveEmployee")
     public String saveEmployee(@Validated @ModelAttribute("employee") Employee employee) {
-        employeeService.saveEmployee(employee);
+        return employeeService.saveEmployee(employee, "redirect:viewEmployeePage","redirect:/showNewEmployeeForm");
+    }
+
+    @PostMapping("/updateEmployee")
+    public String updateEmployee(@Validated @ModelAttribute("employee") Employee employee) {
+       employeeService.updateEmployee(employee, "redirect:viewEmployeePage","redirect:/showNewEmployeeForm");
         return "redirect:viewEmployeePage";
     }
 
