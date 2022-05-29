@@ -178,6 +178,88 @@ Hero
 
 /*
 ===============
+Motorhomes
+===============
+*/
+
+#motorhomes{
+    background: var(--clr-grey-10);
+}
+.card{
+    height: 27rem;
+    position: relative;
+    /*talk later*/
+    perspective: 2500px;
+}
+.card-side{
+    transition: all 2s linear;
+    /*makes the back side of each card invisible. otherwise
+    .card-back will always be on top since it is last in the stack*/
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    height: 27rem;
+    border-radius: var(--radius);
+
+}
+.card-front{
+    background: white;
+}
+.card-back{
+    background: white;
+    transform: rotateY(180deg);
+    display: grid;
+    place-items: center;
+}
+.card:hover .card-front{
+    transform: rotateY(-180deg);
+}
+.card:hover .card-back{
+    transform: rotateY(0);
+}
+
+.card-info{
+    padding: 1rem 1.5rem;
+}
+
+.card-front img{
+    height: 13rem;
+    object-fit: cover;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+.card-footer{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+.card-footer p{
+    margin-bottom: 0;
+    text-transform: uppercase;
+    justify-self: end;
+    color: var(--clr-primary-5);
+    font-size: 0.85rem;
+}
+.motorhomes-center{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 3rem 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+===============
 About
 ===============
 */
@@ -186,10 +268,10 @@ About
 .about-info{
     margin-bottom: 2rem;
 }
-img:not(.nav-logo){
+/*img:not(.nav-logo){
     width: 100%;
     display: block;
-}
+}*/
 
 @media screen and (min-width: 600px){
     .about-center{
