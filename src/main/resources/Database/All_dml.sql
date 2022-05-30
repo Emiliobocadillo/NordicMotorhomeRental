@@ -24,57 +24,57 @@ VALUES ('Douglas','Beaver','douglas.beaver@gmail.com','52525252','falkoner alle 
        ('Nayeem','Hossain','Nayeem.Hossain@gmail.com','63547894','Roskildevej 32','Frederiksberg','Sales Assistent',FALSE);
 
 
-INSERT INTO motorhome_type (type)
-VALUES ('Urban Plus Motorhomes'),
-       ('Compact Plus Motorhomes'),
-       ('Family Plus Motorhomes'),
-       ('Premium Plus Motorhomes'),
-       ('Urban Luxury Motorhomes'),
-       ('Compact Luxury Motorhomes'),
-       ('Family Luxury Motorhomes'),
-       ('Premium Luxury Motorhomes');
+INSERT INTO motorhome_type (type, price)
+VALUES ('Urban Plus Motorhomes', 1382),
+       ('Compact Plus Motorhomes',2419),
+       ('Family Plus Motorhomes', 2764),
+       ('Premium Plus Motorhomes', 2764),
+       ('Urban Luxury Motorhomes', 691),
+       ('Compact Luxury Motorhomes', 2419),
+       ('Family Luxury Motorhomes', 2764),
+       ('Premium Luxury Motorhomes', 3110);
 
 
-INSERT INTO motorhome (name, type, make, model, beds, price)
-VALUES ('Hans',1,'Sunlight ','Cliff 600',2,1382.24),
-       ('Gretel',1,'Toyota ','Hiace',2,1382.24),
-       ('Tinkerbell',1,'ChassisMercedes','Venturer',2,1382.24),
-       ('Peter Pan',1,'Mercedes-Benz Vito','Apollo',4,1382.24),
-       ('Captain hook',1,'Mercedes-Benz X-Class',' X-Terrain',4,1382.24),
+INSERT INTO motorhome (type, brand, model, beds)
+VALUES (1,'Sunlight ','Cliff 600',2),
+       (1,'Toyota ','Hiace',2),
+       (1,'ChassisMercedes','Venturer',2),
+       (1,'Mercedes-Benz Vito','Apollo',4),
+       (1,'Mercedes-Benz X-Class',' X-Terrain',4),
 
-       ('Adam',2,'Sunlight ', 'V60',2,2418.58),
-       ('Eve',2,'Dethleffs', 'Pulse T 7051 DBL',2,2418.58),
-       ('Micky',2,'Fiat', 'Ducato MH2',3,2418.58),
-       ('Anders',2,'Ford','C19',4,2418.58),
+       (2,'Sunlight ', 'V60',2),
+       (2,'Dethleffs', 'Pulse T 7051 DBL',2),
+       (2,'Fiat', 'Ducato MH2',3),
+       (2,'Ford','C19',4),
 
-       ('Kurt',3,'Sunlight', 'A68', 6,2764.12),
-       ('Raymond',3,'Ford','C25',5,2764.12),
-       ('Lizzy',3,'Fiat', 'Ducato 130',4,2764.12),
-       ('Simon',3,'Volkswagen', 'Marling',4,2764.12),
+       (3,'Sunlight', 'A68', 6),
+       (3,'Ford','C25',5),
+       (3,'Fiat', 'Ducato 130',4),
+       (3,'Volkswagen', 'Marling',4),
 
-       ('Joey',4,'Bavaria', 'A65', 4,2764.12),
-       ('Rachel',4,'Fiat', 'Bürstner',5,2764.12),
-       ('Rachel',4,'Fiat', 'Moovéo C 707',6,2764.12),
-       ('Harvey',4,'Mercedes Benz', 'Sprinter 616' ,6 ,2764.12),
+       (4,'Bavaria', 'A65', 4),
+       (4,'Fiat', 'Bürstner',5),
+       (4,'Fiat', 'Moovéo C 707',6),
+       (4,'Mercedes Benz', 'Sprinter 616' ,6),
 
-       ('Betty',5,'Volkswagen','T6',2,691.14),
-       ('Jack',5,'Volkswagen','T6',4,691.14),
-       ('Marco',5,'Mercedes', 'Marco Polo',2,691.14),
-       ('Polo',5,'Mercedes', 'Marco Polo',4,691.14),
-       ('Mitch',5,'Mercedes', 'Marco Polo',4,691.14),
+       (5,'Volkswagen','T6',2),
+       (5,'Volkswagen','T6',4),
+       (5,'Mercedes', 'Marco Polo',2),
+       (5,'Mercedes', 'Marco Polo',4),
+       (5,'Mercedes', 'Marco Polo',4),
 
-       ('Kim',6,'Sunlight', 'I67S',2,2418.58),
-       ('Simona',6,'Dethleffs', 'Pulse Classic 90 T 7051 EB',4,2418.58),
-       ('Cassandra',6,'Mercedes Benz','Discovery',4,2418.58),
-       ('Mads',6,'Tiffin','WAYFARER', 5,2418.58),
+       (6,'Sunlight', 'I67S',2),
+       (6,'Dethleffs', 'Pulse Classic 90 T 7051 EB',4),
+       (6,'Mercedes Benz','Discovery',4),
+       (6,'Tiffin','WAYFARER', 5),
 
-       ('Pilar',7,'Sunlight', 'T67', 4,2764.12),
-       ('Sylvia',7,'Adria', 'Matrix Axess',5,2764.12),
-       ('Louis',7,'Ford','MA33',6,2764.12),
-       ('Kristine',7,'Volkswagen','River',6,2764.12),
+       (7,'Sunlight', 'T67', 4),
+       (7,'Adria', 'Matrix Axess',5),
+       (7,'Ford','MA33',6),
+       (7,'Volkswagen','River',6),
 
-       ('Bertha',8,'Bailey', 'Autograph 81-6', 6,3110.04),
-       ('Marta',8,'Adria', 'Coral XL 670', 6,3110.04);
+       (8,'Bailey', 'Autograph 81-6', 6),
+       (8,'Adria', 'Coral XL 670', 6);
 
 
 

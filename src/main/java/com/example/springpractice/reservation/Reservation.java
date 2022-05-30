@@ -2,10 +2,8 @@ package com.example.springpractice.reservation;
 
 import com.example.springpractice.Person;
 import com.example.springpractice.accessory.Accessory;
-import com.example.springpractice.customer.Customer;
 import com.example.springpractice.motorhome.Motorhome;
-import com.example.springpractice.user.User;
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 
