@@ -28,7 +28,7 @@ public class Reservation extends Person {
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private Motorhome motorhome;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "reservation_id", referencedColumnName = "id")
     private List<Accessory> accessory;
 
