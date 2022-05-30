@@ -13,8 +13,6 @@ public class MotorhomeService {
     //dependency injection
     @Autowired
     private MotorhomeRepo motorhomeRepo;
-    @Autowired
-    private MotorhomeRepository motorhomeRepository;
 
     //Get all motorhomes from database
     public List<Motorhome> getAllMotorhomes() {

@@ -21,14 +21,13 @@ public class Reservation extends Person {
     private int amountOfPeople;
 
     String startDate;
-
     String endDate;
 
     @OneToOne
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private Motorhome motorhome;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "reservation_id", referencedColumnName = "id")
     private List<Accessory> accessory;
 

@@ -1,8 +1,6 @@
 package com.example.springpractice;
 
-import com.sun.istack.NotNull;
 import lombok.*;
-
 import javax.persistence.*;
 
 @MappedSuperclass

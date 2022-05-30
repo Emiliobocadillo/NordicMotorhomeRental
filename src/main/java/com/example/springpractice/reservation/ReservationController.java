@@ -14,8 +14,6 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
     @Autowired
-    private MotorhomeTypeService motorhomeTypeService;
-    @Autowired
     private MotorhomeService motorhomeService;
 
 

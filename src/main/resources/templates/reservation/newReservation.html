@@ -68,7 +68,7 @@
         <div class="col-md-12">
             <label>Motorhome</label>
             <select th:field="*{motorhome}">
-                <option th:each="t : ${listOfMotorhomes}" th:value="${t.id}" th:text="${t}"/>
+                <option th:each="t : ${listOfMotorhomes}" th:value="${t.id}" th:text="${t.price}"/>
             </select>
         </div>
         <br>

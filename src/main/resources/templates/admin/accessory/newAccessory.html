@@ -17,9 +17,9 @@
   <h1>Add New Accessory</h1>
   <form th:action="@{/saveAccessory}" method="post" th:object="${accessory}">
 
-    <input type="text" name="available" placeholder="Name" class="form-control mb-4 col-2"/>
+    <input type="text" name="available" placeholder="Name" class="form-control mb-4 col-2" required/>
     <input type="text" name="name" placeholder="Price per day" class="form-control mb-4 col-2">
-    <input type="text" name="price_per_day" placeholder="Available quantity" class="form-control mb-4 col-2"/>
+    <input type="text" name="price_per_day" step="any" placeholder="Available quantity" class="form-control mb-4 col-2"/>
     <input type="text" name="rented_out" placeholder="Rented out" class="form-control mb-4 col-2"/>
     <input type="text" name="total_stock" placeholder="Total stock" class="form-control mb-4 col-2"/>
 

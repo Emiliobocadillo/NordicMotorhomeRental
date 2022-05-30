@@ -136,6 +136,10 @@ p {
     }
 }
 /*  global classes */
+#btn-custom {
+    background-color: darkorange;
+    color: aliceblue;
+}
 
 .btn {
     text-transform: uppercase;
