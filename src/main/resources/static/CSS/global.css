@@ -137,7 +137,7 @@ p {
 }
 /*  global classes */
 #btn-custom {
-    background-color: darkorange;
+    background-color: var(--clr-grey-1);
     color: aliceblue;
 }
 

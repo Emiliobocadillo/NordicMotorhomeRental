@@ -21,4 +21,7 @@ public class MotorhomeTypeService {
 
     //public void saveMotorhomeType(MotorhomeType motorhomeType) {this.motorhomeTypeRepo.save(motorhomeType);}
 
+    public List<MotorhomeType> getAllPrices() {
+        return motorhomeTypeRepo.findAll();
+    }
 }
