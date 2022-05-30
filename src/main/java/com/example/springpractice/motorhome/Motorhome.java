@@ -12,7 +12,6 @@ public class Motorhome {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false)
     private int id;
-    private String name;
 
     @OneToOne
     @JoinColumn(name = "type", referencedColumnName = "id")

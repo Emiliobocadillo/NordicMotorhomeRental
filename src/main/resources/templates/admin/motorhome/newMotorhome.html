@@ -17,8 +17,8 @@
   <form th:action="@{/saveMotorhome}" method="post" th:object="${motorhome}">
     <div class="row g-3">
       <div class="col-md-6">
-        <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" id="name" required/>
+        <label for="model">Model</label>
+        <input type="text" name="model" class="form-control" id="model" required>
       </div>
       <div class="col-md-6">
         <label for="make">Make</label>
@@ -27,15 +27,11 @@
     </div>
 
     <div class="row g-3">
-      <div class="col-md-4">
-        <label for="model">Model</label>
-        <input type="text" name="model" class="form-control" id="model" required>
-      </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <label for="beds">Amount of Beds</label>
         <input type="number" name="beds" id="beds" class="form-control" min="1" max="6" required/>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <label for="price">Price</label>
         <input type="number" step="any" name="price" id="price" placeholder="00" class="form-control" min="1" max="99999" required/>
       </div>
