@@ -16,7 +16,7 @@ public class Motorhome {
     @OneToOne
     @JoinColumn(name = "type", referencedColumnName = "id")
     private MotorhomeType motorhomeType;
-    private String make;
+    private String brand;
     private String model;
     private int beds;
     private double price;
