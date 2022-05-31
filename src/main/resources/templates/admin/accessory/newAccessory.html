@@ -17,11 +17,11 @@
   <h1>Add New Accessory</h1>
   <form th:action="@{/saveAccessory}" method="post" th:object="${accessory}">
 
-    <input type="text" name="available" placeholder="Name" class="form-control mb-4 col-2" required/>
-    <input type="text" name="name" placeholder="Price per day" class="form-control mb-4 col-2">
-    <input type="text" name="price_per_day" step="any" placeholder="Available quantity" class="form-control mb-4 col-2"/>
-    <input type="text" name="rented_out" placeholder="Rented out" class="form-control mb-4 col-2"/>
-    <input type="text" name="total_stock" placeholder="Total stock" class="form-control mb-4 col-2"/>
+    <input type="text" name="name" placeholder="Name" class="form-control mb-4 col-2" required/>
+    <input type="number" name="price" step="any" placeholder="Price" class="form-control mb-4 col-2">
+    <input type="number" name="available" step="any" placeholder="Available quantity" class="form-control mb-4 col-2"/>
+    <input type="number" name="rented_out" step="any" placeholder="Rented out" class="form-control mb-4 col-2"/>
+    <input type="number" name="total_stock" step="any" placeholder="Total stock" class="form-control mb-4 col-2"/>
 
     <button type="submit" class="btn btn-info col-2">Save Accessory</button>
     <a th:href = "@{/viewAccessoryPage}" class="btn btn-secondary col-2"> Back </a>

@@ -31,10 +31,10 @@
   <tbody>
   <tr th:each="accessory: ${listOfAccessories}">
     <td th:text="${accessory.name}"></td>
-    <td th:text="${accessory.pricePerDay}"></td>
+    <td th:text="${accessory.getPrice}"></td>
     <td th:text="${accessory.available}"></td>
-    <td th:text="${accessory.rentedOut}"></td>
-    <td th:text="${accessory.totalStock}"></td>
+    <td th:text="${accessory.rented_out}"></td>
+    <td th:text="${accessory.total_stock}"></td>
     <td>
       <a th:href = "@{/showAccessoryUpdateForm/{id}(id=${accessory.id})}" class="btn btn-secondary btn-sm"> Update </a>
       <a th:href = "@{/deleteAccessory/{id}(id=${accessory.id})}" class="btn btn-danger btn-sm"> Delete </a>

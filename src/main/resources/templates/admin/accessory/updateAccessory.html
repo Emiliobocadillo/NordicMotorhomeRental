@@ -17,10 +17,10 @@
     <input type="hidden" th:field="*{id}"/>
 
     <input type="text" th:field="*{name}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{pricePerDay}" step="any" class="form-control mb-4 col-2">
+    <input type="text" th:field="*{price}" step="any" class="form-control mb-4 col-2">
     <input type="text" th:field="*{available}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{rentedOut}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{totalStock}" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{rented_out}" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{total_stock}" class="form-control mb-4 col-2"/>
 
     <button type="submit" class="btn btn-info col-2">Save Accessory</button>
     <a th:href = "@{/viewAccessoryPage}" class="btn btn-secondary col-2"> Back </a>

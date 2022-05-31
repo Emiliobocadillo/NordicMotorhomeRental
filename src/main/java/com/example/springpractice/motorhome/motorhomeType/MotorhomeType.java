@@ -13,7 +13,7 @@ public class MotorhomeType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-
     @Column(unique = true)
     String type;
+
 }

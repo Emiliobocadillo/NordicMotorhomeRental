@@ -20,5 +20,4 @@ public class Motorhome {
     private String model;
     private int beds;
     private double price;
-
 }
