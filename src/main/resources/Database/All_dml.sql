@@ -78,8 +78,8 @@ VALUES (1,'Sunlight ','Cliff 600',2,1382.24),
        (8,'Bailey', 'Autograph 81-6', 6,3110.04),
        (8,'Adria', 'Coral XL 670', 6,3110.04);
 
-/*INSERT INTO user (email, password, username, emp_email)
-VALUES ('Admin@admin.com', '1234', 'admin');*/
+INSERT INTO user (email, password, username)
+VALUES ('Admin@admin.com', '1234', 'admin');
 
 
 
