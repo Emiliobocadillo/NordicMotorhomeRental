@@ -1,3 +1,8 @@
+/*
+===============
+Martin and Nayeem
+===============
+*/
 package com.example.springpractice.reservation;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +40,10 @@ public class ReservationService {
             return reservationPage;
         }
 
+    }
+
+    public void updateReservation(Reservation reservation){
+        reservationRepo.save(reservation);
     }
 
     //gets specific reservation with the selected ID

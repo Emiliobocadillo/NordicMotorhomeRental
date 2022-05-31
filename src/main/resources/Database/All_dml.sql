@@ -1,3 +1,8 @@
+/*
+===============
+Everybody
+===============
+*/
 USE nmr;
 INSERT INTO accessory (available, name, price, rented_out, total_stock)
 VALUES ('20', 'Large BBQ', '30', '0', '32'),

@@ -1,3 +1,4 @@
+<!--Martin-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 
         <div class="container mt-5">
             <h1>Update Reservation</h1>
-            <form th:action="@{/saveReservation}" method="post" th:object="${reservation}">
+            <form th:action="@{/updateReservation}" method="post" th:object="${reservation}">
                 <input type="hidden" th:field="*{id}"/>
 
                 <div class="row g-3">

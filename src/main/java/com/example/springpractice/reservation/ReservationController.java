@@ -1,3 +1,8 @@
+/*
+===============
+Martin
+===============
+*/
 package com.example.springpractice.reservation;
 
 import com.example.springpractice.motorhome.MotorhomeService;
@@ -40,6 +45,13 @@ public class ReservationController {
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
         return reservationService.saveReservation(reservation, "redirect:/viewReservationPage", "reservation/newReservation");
+    }
+
+    @PostMapping("/updateReservation")
+    public String updateReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
+        model.addAttribute("listOfReservations",reservationService.getAllReservations());
+        model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
+        return "redirect:/viewReservationPage";
     }
 
     //Displays form for updating reservation by selected ID
