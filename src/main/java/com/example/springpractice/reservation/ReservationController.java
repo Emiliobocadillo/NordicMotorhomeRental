@@ -51,6 +51,7 @@ public class ReservationController {
     public String updateReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
         model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
+        reservationService.updateReservation(reservation);
         return "redirect:/viewReservationPage";
     }
 
