@@ -42,15 +42,11 @@ public class ReservationController {
     //submit the values from the forms AddNewReservation or UpdateReservation to the database
     @PostMapping("/saveReservation")
     public String saveReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
-        model.addAttribute("listOfReservations",reservationService.getAllReservations());
-        model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
         return reservationService.saveReservation(reservation, "redirect:/viewReservationPage", "reservation/newReservation");
     }
 
     @PostMapping("/updateReservation")
     public String updateReservation(@ModelAttribute("reservation") Reservation reservation, Model model) {
-        model.addAttribute("listOfReservations",reservationService.getAllReservations());
-        model.addAttribute("listOfMotorhomes",motorhomeService.getAllMotorhomes());
         reservationService.updateReservation(reservation);
         return "redirect:/viewReservationPage";
     }
