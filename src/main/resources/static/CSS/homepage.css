@@ -199,7 +199,7 @@ Motorhomes
     perspective: 2500px;
 }
 .card-side{
-    transition: all 2s linear;
+    transition: all 0.5s linear;
     /*makes the back side of each card invisible. otherwise
     .card-back will always be on top since it is last in the stack*/
     backface-visibility: hidden;
