@@ -5,10 +5,8 @@ Martin & Nayeem
 */
 package com.example.springpractice.employee;
 
-import com.example.springpractice.Controller.LoginController;
 import com.example.springpractice.user.User;
 import com.example.springpractice.user.UserRepo;
-import com.example.springpractice.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,7 +52,7 @@ public class EmployeeController {
 
     @PostMapping("/updateEmployee")
     public String updateEmployee(@Validated @ModelAttribute("employee") Employee employee) {
-       employeeService.updateEmployee(employee, "redirect:viewEmployeePage","redirect:/showNewEmployeeForm");
+       employeeService.updateEmployee(employee);
         return "redirect:viewEmployeePage";
     }
 

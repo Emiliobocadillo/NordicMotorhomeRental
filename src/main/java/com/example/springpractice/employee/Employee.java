@@ -8,7 +8,6 @@ package com.example.springpractice.employee;
 import com.example.springpractice.Person;
 import javax.persistence.*;
 
-import com.example.springpractice.user.User;
 import lombok.*;
 
 @Entity

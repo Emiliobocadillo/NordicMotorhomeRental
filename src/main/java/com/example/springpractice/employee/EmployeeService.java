@@ -23,12 +23,6 @@ public class EmployeeService {
     private EmployeeRepo employeeRepo;
     @Autowired
     JdbcTemplate jdbcTemplate;
-/*
-    private checkEmail(){
-        employeeRepo.
-    }
-
- */
 
     //get a list of all employees from database
     public List<Employee> getAllEmployees() {
@@ -47,29 +41,11 @@ public class EmployeeService {
             this.employeeRepo.save(employee);
             return employeePage;
         }
-
     }
 
-    public void updateEmployee(Employee employee, String employeePage , String newEmployeePage){
-//        String email = "";
-//        String sql = "SELECT email FROM employee WHERE email = ?";
-//        email = jdbcTemplate.queryForObject(sql, new Object[] {employee.getEmail()}, String.class);
-//        System.out.println(email);
-//        if (email.equals(employee.getEmail())){
-//            return newEmployeePage;
-//        }
-//        else {
-//            this.employeeRepo.save(employee);
-//            return employeePage;
-//        }
+    public void updateEmployee(Employee employee){
         this.employeeRepo.save(employee);
     }
-
-
-
-
-
-
 
     //get employee with specific ID from database
     public Employee getEmployeeById(int id){
@@ -88,7 +64,5 @@ public class EmployeeService {
     public void deleteEmployeeById(int id) {
         this.employeeRepo.deleteById(id);
     }
-
-
 
 }

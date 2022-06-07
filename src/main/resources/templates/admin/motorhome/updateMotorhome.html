@@ -42,7 +42,7 @@
                 <label for="motorhomeType">Motorhome Type</label>
                 <br>
                 <select id="motorhomeType" th:field="*{motorhomeType}">
-                    <option th:each="t : ${listOfTypes}" th:value="${t.id}" th:text="${t.type}" />
+                    <option th:each="m : ${listOfTypes}" th:value="${m.id}" th:text="${m.type}" />
                 </select>
             </div>
 

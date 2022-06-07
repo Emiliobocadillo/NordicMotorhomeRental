@@ -20,60 +20,60 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="firstname">Firstname</label>
-                        <input type="text" th:field="*{firstName}" id="firstname" class="form-control"/>
+                        <input type="text" th:field="*{firstName}" id="firstname" class="form-control" required/>
                          </div>
                     <div class="col-md-6">
                         <label for="lastname">Lastname</label>
-                        <input type="text" th:field="*{lastName}" id="lastname" class="form-control"/>
+                        <input type="text" th:field="*{lastName}" id="lastname" class="form-control" required/>
                     </div>
                 </div>
 
                 <div class="row g-3">
                     <div class="col-md-8">
                         <label for="email">E-mail</label>
-                        <input type="text" th:field="*{email}" id="email" class="form-control"/>
+                        <input type="text" th:field="*{email}" id="email" class="form-control" required/>
                     </div>
                     <div class="col-md-4">
                         <label for="phoneNr">Phone Number</label>
-                        <input type="text" th:field="*{phoneNr}" id="phoneNr" class="form-control"/>
+                        <input type="text" th:field="*{phoneNr}" id="phoneNr" class="form-control" required/>
                     </div>
                 </div>
 
                 <div class="row g-3">
                     <div class="col-md-8">
                         <label for="address">Address</label>
-                        <input type="text" th:field="*{address}" id="address" class="form-control"/>
+                        <input type="text" th:field="*{address}" id="address" class="form-control" required/>
                     </div>
                     <div class="col-md-4">
                         <label for="city">City</label>
-                        <input type="text" th:field="*{city}" id="city" class="form-control"/>
+                        <input type="text" th:field="*{city}" id="city" class="form-control" required/>
                     </div>
                 </div>
 
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="amount">Amount of People</label>
-                        <input type="number" th:field="*{amountOfPeople}" id="amount" class="form-control" min="1" max="6"/>
+                        <input type="number" th:field="*{amountOfPeople}" id="amount" class="form-control" min="1" max="6" required/>
                     </div>
                     <div class="col-md-4">
                         <label for="startDate">Start Date</label>
-                        <input type="date" th:field="*{startDate}" id="startDate" class="form-control"/>
+                        <input type="date" th:field="*{startDate}" id="startDate" class="form-control" required/>
                     </div>
                     <div class="col-md-4">
                         <label for="endDate">End Date</label>
-                        <input type="date" th:field="*{endDate}" id="endDate" class="form-control"/>
+                        <input type="date" th:field="*{endDate}" id="endDate" class="form-control" required/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Motorhome</label>
                     <select th:field="*{motorhome}">
-                        <option th:each="t : ${listOfMotorhomes}" th:value="${t.id}" th:text="${t}"/>
+                        <option th:each="m : ${listOfMotorhomes}" th:value="${m.id}" th:text="${m}"/>
                     </select>
                 </div>
 
         <br>
                 <div>
-        <button type="submit" class="btn btn-info col-2">Save Motorhome</button>
+        <button type="submit" class="btn btn-info col-2">Save Reservation</button>
         <a th:href = "@{/viewReservationPage}" class="btn btn-secondary col-2"> Back </a>
                 </div>
     </form>

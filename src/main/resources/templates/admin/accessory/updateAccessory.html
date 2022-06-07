@@ -18,11 +18,11 @@
 
     <input type="hidden" th:field="*{id}"/>
 
-    <input type="text" th:field="*{name}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{price}" step="any" class="form-control mb-4 col-2">
-    <input type="text" th:field="*{available}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{rented_out}" class="form-control mb-4 col-2"/>
-    <input type="text" th:field="*{total_stock}" class="form-control mb-4 col-2"/>
+    <input type="text" th:field="*{name}" class="form-control mb-4 col-2" required/>
+    <input type="text" th:field="*{price}" step="any" class="form-control mb-4 col-2" required/>
+    <input type="text" th:field="*{available}" class="form-control mb-4 col-2" required/>
+    <input type="text" th:field="*{rented_out}" class="form-control mb-4 col-2" required/>
+    <input type="text" th:field="*{total_stock}" class="form-control mb-4 col-2" required/>
 
     <button type="submit" class="btn btn-info col-2">Save Accessory</button>
     <a th:href = "@{/viewAccessoryPage}" class="btn btn-secondary col-2"> Back </a>

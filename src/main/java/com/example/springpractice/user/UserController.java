@@ -3,7 +3,7 @@
 Emil & Nayeem
 ===============
 */
-package com.example.springpractice.Controller;
+package com.example.springpractice.user;
 
 import com.example.springpractice.employee.EmployeeService;
 import com.example.springpractice.motorhome.MotorhomeService;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class LoginController {
+public class UserController {
     @Autowired
     UserService userService;
     @Autowired
@@ -40,7 +40,7 @@ public class LoginController {
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
         model.addAttribute("motorhome",motorhomeService.getAllMotorhomes());
-        return userService.checkUser(model, user, "/login","redirect:/admin", "redirect:/viewReservationPage" );
+        return userService.checkUser(model, user, "redirect:/login","redirect:/admin", "redirect:/viewReservationPage" );
     }
 
     @PostMapping("/addNewUser")
@@ -48,7 +48,7 @@ public class LoginController {
         model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
         model.addAttribute("listOfReservations",reservationService.getAllReservations());
         model.addAttribute("motorhome",motorhomeService.getAllMotorhomes());
-        return userService.addUser(model, user, "login", "redirect:/admin", "redirect:/viewReservationPage");
+        return userService.addUser(model, user, "redirect:/login", "redirect:/admin", "redirect:/viewReservationPage");
     }
 
 

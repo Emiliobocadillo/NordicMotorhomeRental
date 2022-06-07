@@ -31,11 +31,11 @@
     <div class="row g-3">
       <div class="col-md-6">
         <label for="beds">Amount of Beds</label>
-        <input type="number" name="beds" id="beds" class="form-control" min="1" max="6" required/>
+        <input type="number" name="beds" id="beds" class="form-control" placeholder="2-6" min="2" max="6" required/>
       </div>
       <div class="col-md-6">
         <label for="price">Price</label>
-        <input type="number" step="any" name="price" id="price" placeholder="00" class="form-control" min="1" max="99999" required/>
+        <input type="number" step="any" name="price" id="price" placeholder="00.00" class="form-control" min="1" max="99999" required/>
       </div>
     </div>
     <br>
@@ -44,7 +44,7 @@
       <label for="motorhomeType">Motorhome Type</label>
       <br>
       <select id="motorhomeType" th:field="*{motorhomeType}">
-        <option th:each="t : ${listOfTypes}" th:value="${t.id}" th:text="${t.type}" />
+        <option th:each="m : ${listOfTypes}" th:value="${m.id}" th:text="${m.type}" />
       </select>
     </div>
 
