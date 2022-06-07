@@ -17,6 +17,11 @@ Variables
 */
 
 :root {
+    /*delete button color*/
+    --clr-red-delete-1:rgb(255, 102, 102);
+    --clr-red-delete-2:rgb(255, 26, 26);
+
+
     /* dark shades of primary color*/
     --clr-primary-1: rgb(4, 78, 83);
     --clr-primary-2: rgb(10,108,117);

@@ -14,8 +14,8 @@
 </head>
 <body>
 <h1>Motorhomes</h1>
-<a th:href = "@{/showNewMotorhomeForm}" class="btn btn-primary btn-sm mb-3"> Add Motorhome </a>
-<a th:href = "@{/admin}" class="btn btn-secondary btn-sm mb-3"> Back to admin page </a>
+<a th:href = "@{/showNewMotorhomeForm}" class="btn"> Add Motorhome </a>
+<a th:href = "@{/admin}" class="btn" style="background-color: var(--clr-grey-5)"> Back to admin page </a>
 
 <table  class="table table-bordered table-responsive-md">
 
@@ -39,8 +39,8 @@
             <td th:text="${motorhome.beds}"/>
             <td th:text="${motorhome.price}"/>
             <td>
-                <a th:href = "@{/showMotorhomeUpdateForm/{id}(id=${motorhome.id})}" class="btn btn-secondary btn-sm"> Update </a>
-                <a th:href = "@{/deleteMotorhome/{id}(id=${motorhome.id})}" class="btn btn-danger btn-sm"> Delete </a>
+                <a th:href = "@{/showMotorhomeUpdateForm/{id}(id=${motorhome.id})}" class="btn"> Update </a>
+                <a th:href = "@{/deleteMotorhome/{id}(id=${motorhome.id})}" class="btn" style="background-color: var(--clr-red-delete-1)"> Delete </a>
             </td>
         </tr>
         </tbody>
