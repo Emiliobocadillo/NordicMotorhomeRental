@@ -1,20 +1,51 @@
 <!--Emil & Martin-->
 
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Update Accessory</title>
-    <link rel="stylesheet" type="text/css" href="css/admin.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="template/global.css">
 </head>
 <body>
 
-<div align="center">
+<nav class="navbar">
+    <div class="nav-center">
+        <!--nav header-->
+        <div class="nav-header">
+            <a href="/"> <img src="/images/logo1.png" class="nav-logo" alt=""></a>
+
+            <button type="button" class="nav-toggle" id="nav-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!--end of nav header-->
+
+        <!--nav links-->
+        <ul class="nav-links" id="nav-links">
+            <!--single link-->
+
+            <li>
+                <a href="/viewEmployeePage" class="nav-link">Employees</a>
+            </li>
+            </li>
+            <a href="/viewMotorhomePage" class="nav-link">Motorhomes</a>
+            </li>
+            </li>
+            <a href="/viewAccessoryPage" class="nav-link">Accessories</a>
+            </li>
+            <li>
+                <a href="/viewReservationPage" class="nav-link">Reservation</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div>
     <h1>Update Accessory</h1>
     <form th:action="@{/saveAccessory}" method="post" th:object="${accessory}">
 
